@@ -6,14 +6,36 @@
 
  */
 
-var REST_PATH;
-try {
-	require("drupal/config.js");
-	REST_PATH = SITE_ROOT + SERVICES_ENDPOINT + '/';
+var Settings, createHTTPClient;
+if (typeof Ti != 'undefined') {
+    Settings = Ti.App.Properties;
+    createHTTPClient = Ti.Network.createHTTPClient;
 }
-catch (e) {
-	throw("************************ DRUPAL CONFIG NOT FOUND *******************************");
+else {
+    var npSettings = require("node-persist");
+    Settings = {
+	setString: function(name, value) {
+	    npSettings.setItem(name, value);
+	},
+	getString: function(name, defaultValue) {
+	    var item = npSettings.getItem(name);
+	    if (item == undefined) {
+		return defaultValue;
+	    }
+	    else {
+		return item;
+	    }
+	}
+    };
+    npSettings.initSync();
+
+    createHTTPClient = function(){
+	throw("vanilla http client not defined yet");
+    }
 }
+
+
+var REST_PATH, SERVICES_ENDPOINT, SITE_ROOT;
 
 /**
  * Prepare to connect to a (different) Drupal server and Services 3.4 module.
@@ -31,11 +53,11 @@ function setRestPath(root, endpoint) {
  */
 function systemConnect(success, failure) {
 
-	var xhr = Ti.Network.createHTTPClient();
+	var xhr = createHTTPClient();
 
     var url = REST_PATH + 'system/connect';
 
-    Ti.API.debug("POSTing to url "+url);
+    console.log("POSTing to url "+url);
     xhr.open("POST", url);
 
 	xhr.onload = function(e) {
@@ -44,11 +66,11 @@ function systemConnect(success, failure) {
 			var response = xhr.responseText;
 			var responseData = JSON.parse(response);
             
-            Ti.API.debug("system.connect session "+responseData.sessid);
-            Ti.API.debug('system.connect user '+responseData.user.uid);
+            console.log("system.connect session "+responseData.sessid);
+            console.log('system.connect user '+responseData.user.uid);
             
             var cookie = responseData.session_name+'='+responseData.sessid;
-            Ti.App.Properties.setString("Drupal-Cookie", cookie);
+            Settings.setString("Drupal-Cookie", cookie);
 
             getCsrfToken(function(token){
                 success(responseData);
@@ -62,12 +84,12 @@ function systemConnect(success, failure) {
 		}
 	};
 	xhr.onerror = function(e) {
-        Ti.API.error("There was an error calling systemConnect: ");
-        Ti.API.error(e);
+        console.log("There was an error calling systemConnect: ");
+        console.log(e);
 
 		// since systemConnect failed, will need a new csrf and session
-        Ti.App.Properties.setString("X-CSRF-Token", null);
-        Ti.App.Properties.setString("Drupal-Cookie", null);
+        Settings.setString("X-CSRF-Token", null);
+        Settings.setString("Drupal-Cookie", null);
 
 		failure(e);
 	};
@@ -82,7 +104,7 @@ function systemConnect(success, failure) {
  */
 function getCsrfToken(success, failure) {
     
-    var existingToken = Ti.App.Properties.getString("X-CSRF-Token");
+    var existingToken = Settings.getString("X-CSRF-Token");
     if (existingToken) {
         success(existingToken);
         return;
@@ -91,13 +113,13 @@ function getCsrfToken(success, failure) {
     var xhr = Ti.Network.createHTTPClient();
 
     xhr.onload = function() {
-        Ti.App.Properties.setString("X-CSRF-Token", xhr.responseText);
-        Ti.API.info('got new CSRF token ' + xhr.responseText);
+        Settings.setString("X-CSRF-Token", xhr.responseText);
+        console.log('got new CSRF token ' + xhr.responseText);
         success(xhr.responseText);
     };
     xhr.onerror = function(err) {
-        Ti.API.error("error getting CSRF token:");
-        Ti.API.error(err);
+        console.log("error getting CSRF token:");
+        throw(err);
         
         failure(err);
     };
@@ -105,7 +127,7 @@ function getCsrfToken(success, failure) {
     var tokenPath = SITE_ROOT + 'services/session/token';
     xhr.open("GET", tokenPath);
 
-    var cookie = Ti.App.Properties.getString("Drupal-Cookie");
+    var cookie = Settings.getString("Drupal-Cookie");
     xhr.setRequestHeader("Cookie", cookie);
 
     xhr.send();
@@ -145,11 +167,11 @@ function makeAuthenticatedRequest(config, success, failure, headers) {
     xhr.open(config.httpMethod, url);
 
     xhr.onerror = function(e) {
-        Ti.API.error(JSON.stringify(e));
+        console.log(JSON.stringify(e));
 
-		Ti.API.error('FAILED REQUEST:');
-		Ti.API.error(trace);
-		Ti.API.error(config.params);
+		console.log('FAILED REQUEST:');
+		console.log(trace);
+		console.log(config.params);
 
         failure(e);
     };
@@ -160,20 +182,20 @@ function makeAuthenticatedRequest(config, success, failure, headers) {
             success(responseData);
         }
         else {
-	        Ti.API.trace('makeAuthReq returned with status '+xhr.status);
+	    console.log('makeAuthReq returned with status '+xhr.status);
             failure(xhr.responseText);
         }
     };
 
 
 	if (!config.skipCookie) {
-		var cookie = Ti.App.Properties.getString("Drupal-Cookie");
+		var cookie = Settings.getString("Drupal-Cookie");
 	    xhr.setRequestHeader("Cookie", cookie);
 	    trace += "Cookie: " + cookie + "\n";
 	}
 
     if (!config.skipCsrfToken) {
-    	var token = Ti.App.Properties.getString("X-CSRF-Token");
+    	var token = Settings.getString("X-CSRF-Token");
         xhr.setRequestHeader("X-CSRF-Token", token);
         trace += "X-CSRF-Token: " + token + "\n";
     }
@@ -195,8 +217,8 @@ function makeAuthenticatedRequest(config, success, failure, headers) {
 
 	// optionally output a summary of the request
 	if (config.trace) {
-		Ti.API.trace(trace);
-		Ti.API.trace(config.params);
+		console.log(trace);
+	        console.log(config.params);
 	}
 	
     xhr.send(config.params);
@@ -208,7 +230,7 @@ function makeAuthenticatedRequest(config, success, failure, headers) {
  */
 function createAccount(user, success, failure, headers) {
 
-	Ti.API.info('Registering new user: '+JSON.stringify(user)+" with cookie "+Ti.App.Properties.getString("Drupal-Cookie"));	
+	console.log('Registering new user: '+JSON.stringify(user)+" with cookie "+Settings.getString("Drupal-Cookie"));	
 
 	makeAuthenticatedRequest({
 			httpMethod : 'POST',
@@ -218,12 +240,12 @@ function createAccount(user, success, failure, headers) {
 		}, 
 		//success
 		function(responseData){
-			Ti.API.info('registerNewUser SUCCESS');
+			console.log('registerNewUser SUCCESS');
 			success(responseData);
 		},
 		//fail
 		function(err){
-			Ti.API.error('registerNewUser FAIL');
+			console.log('registerNewUser FAIL');
 			failure(err);
 		},
 		headers
@@ -251,11 +273,11 @@ function login(username, password, success, failure, headers) {
 		function(responseData) {
 
             var cookie = responseData.session_name+'='+responseData.sessid;
-            Ti.App.Properties.setString("Drupal-Cookie", cookie);
-            Ti.API.debug('login saving new cookie '+cookie);
+            Settings.setString("Drupal-Cookie", cookie);
+            console.log('login saving new cookie '+cookie);
 
             // clear old token and get a new one for this session
-            Ti.App.Properties.setString("X-CSRF-Token", null);
+            Settings.setString("X-CSRF-Token", null);
             getCsrfToken(function(token){
                 success(responseData.user);
             },
@@ -277,7 +299,7 @@ function logout(success, failure, headers) {
 		servicePath : 'user/logout.json'
 	}, function(response) {
 	    // session over - delete the token
-        Ti.App.Properties.setString("X-CSRF-Token", null);
+        Settings.setString("X-CSRF-Token", null);
 		success(response);
 	}, failure, headers);
 
@@ -341,7 +363,7 @@ function createNode(node, success, failure, headers) {
 				node : node
 			})
 		}, function(response) {
-			Ti.API.trace(JSON.stringify(response));
+			console.log(JSON.stringify(response));
 			success(response);
 		}, function(response) {
 			failure(response);
