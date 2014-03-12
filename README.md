@@ -22,11 +22,11 @@ drupal.systemConnect(
 	//success
 	function(sessionData) {
 		var uid = sessionData.user.uid;
-		Ti.API.info('session found for user '+uid);
+		console.log('session found for user '+uid);
 	},
 	//failure
 	function(error) {
-		Ti.API.error('boo :(');
+		console.log('boo :(');
 	}
 );
 ```
