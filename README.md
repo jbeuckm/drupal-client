@@ -43,11 +43,11 @@ var user = {
 drupal.createAccount(user,
 	//success
 	function(userData) {
-		Ti.API.info('yay!');
+		console.log('yay!');
 	},
 	//failure
 	function(error) {
-		Ti.API.error('boo :(');
+		console.log('boo :(');
 	},
 	headers //optional
 );	
@@ -64,11 +64,11 @@ var userObject;
 
 drupal.login(my_username, my_password,
 	function(userData) {
-		Ti.API.info('User ' + userData.uid + ' has logged in.');
+		console.log('User ' + userData.uid + ' has logged in.');
 		userObject = userData;
 	},
 	function(err){
-		Ti.API.error('login failed.');
+		console.log('login failed.');
 	}
 );
 ```
@@ -80,10 +80,10 @@ This updates an account profile on the server. `userObject` is a user object tha
 ```javascript
 drupal.putResource("user/"+userObject.uid, userObject, 
 	function(userData) {
-		Ti.API.info('user has been updated.');
+		console.log('user has been updated.');
 	},
 	function(err){
-		Ti.API.error('user update failed.');
+		console.log('user update failed.');
 	}
 );
 	
