@@ -11,7 +11,7 @@
     "node-persist": "*"
   },
   "devDependencies": {
-    "mocha": "~1.17.1"
+
   },
   "scripts":{
     "test": "jasmine-node test/*.spec.js"
