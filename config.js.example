@@ -1,0 +1,3 @@
+
+var SITE_ROOT = "[enter your site's base url here]";
+var SERVICES_ENDPOINT = "[enter your services rest endpoint path here]";

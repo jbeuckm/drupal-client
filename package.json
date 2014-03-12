@@ -1,0 +1,19 @@
+{
+  "name": "drupal.js",
+  "version": "0.0.1",
+  "description": "Vanilla Drupal Javascript Adapter",
+  "main": "drupal.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Joe Beuckman",
+  "license": "no"
+}
