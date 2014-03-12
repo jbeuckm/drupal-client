@@ -438,6 +438,7 @@ function basicField(obj) {
 	};
 }
 
+exports.Settings = Settings;
 exports.setRestPath = setRestPath;
 
 exports.systemConnect = systemConnect;

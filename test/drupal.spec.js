@@ -26,7 +26,7 @@ describe("Drupal Tests", function() {
                 drupal.systemConnect(
                     function(responseData) {
                         uid = responseData.user.uid;
-                        Ti.API.info("system/connect reported uid "+uid);
+                        console.log("system/connect reported uid "+uid);
                         connected = true;
                         done = true;
                     },
@@ -86,13 +86,13 @@ describe("Drupal Tests", function() {
             runs(function() {
                 drupal.login(user.name, user.pass,
                     function(data) {
-                        Ti.API.info('spec login succeeded with uid '+data.uid);
+                        console.log('spec login succeeded with uid '+data.uid);
                         uid = data.uid;
                         loggedin = true;
                         done = true;
                     },
                     function(err) {
-                        Ti.API.error(err);
+                        console.log(err);
                         loggedin = false;
                         done = true;
                     }
@@ -143,12 +143,12 @@ describe("Drupal Tests", function() {
             runs(function() {
                 drupal.postResource('node', node, 
                     function() {
-                        Ti.API.info('POST succeeded');
+                        console.log('POST succeeded');
                         success = true;
                         done = true;
                     },
                     function(err) {
-                        Ti.API.error(err);
+                        console.log(err);
                         success = false;
                         done = true;
                     }
@@ -206,8 +206,8 @@ describe("Drupal Tests", function() {
 
     function logoutIfNecessary() {
         
-        var token = Ti.App.Properties.getString("X-CSRF-Token");
-        var cookie = Ti.App.Properties.getString("Drupal-Cookie");
+        var token = drupal.Settings.getString("X-CSRF-Token");
+        var cookie = drupal.Settings.getString("Drupal-Cookie");
         if (token && cookie) {
             
             it("logs out if necessary", function() {
@@ -219,8 +219,8 @@ describe("Drupal Tests", function() {
         
                     drupal.logout(
                         function(){
-    Ti.App.Properties.setString("X-CSRF-Token", null);
-    Ti.App.Properties.setString("Drupal-Cookie", null);        
+    drupal.Settings.setString("X-CSRF-Token", null);
+    drupal.Settings.setString("Drupal-Cookie", null);        
                             loggedout = true;
                             done = true;
                         }, 
@@ -245,8 +245,6 @@ describe("Drupal Tests", function() {
 
 
 
-
-
 function createRandomString(max) {
 
     if (max == null) max = 20;
@@ -259,3 +257,4 @@ function createRandomString(max) {
 
     return text;
 }
+

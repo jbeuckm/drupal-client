@@ -12,9 +12,9 @@
   "devDependencies": {
     "mocha": "~1.17.1"
   },
-  "scripts": {
-    "test": "mocha"
+  "scripts":{
+    "test": "jasmine-node test/*.spec.js"
   },
   "author": "Joe Beuckman",
-  "license": "no"
+  "license": "Don't read software licenses. Don't write software licenses."
 }
