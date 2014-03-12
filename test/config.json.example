@@ -1,0 +1,4 @@
+{
+    "SITE_ROOT": "[enter your site's base url here]",
+    "SERVICES_ENDPOINT": "[enter your services rest endpoint path here]"
+}
