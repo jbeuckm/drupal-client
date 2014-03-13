@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/config.json.travis" afterPath="$PROJECT_DIR$/test/config.json.travis" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/travis-ci-apache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
+            <state line="31" column="47" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.6238994">
               <folding />
             </state>
           </provider>
@@ -79,10 +81,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.json.travis" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.json.travis" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/config.json.travis">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="29" selection-start="76" selection-end="76" vertical-scroll-proportion="0.04025157">
+            <state line="2" column="29" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="travis-ci-apache" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/travis-ci-apache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,8 +141,9 @@
         <option value="$PROJECT_DIR$/drupal-js.build" />
         <option value="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/test/config.json.travis" />
+        <option value="$PROJECT_DIR$/build/travis-ci-apache" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -241,6 +253,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -308,6 +334,21 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method>
+        <option name="FtpUpload" enabled="false">
+          <server_id />
+          <server_name />
+        </option>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -479,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="4" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
@@ -495,7 +529,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/config.json.travis">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="76" selection-end="76" vertical-scroll-proportion="0.04025157">
+        <state line="2" column="29" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/travis-ci-apache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="47" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.6238994">
           <folding />
         </state>
       </provider>
