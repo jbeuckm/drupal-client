@@ -1,4 +1,4 @@
 {
-    "SITE_ROOT": "[enter your site's base url here]",
-    "SERVICES_ENDPOINT": "[enter your services rest endpoint path here]"
+    "SITE_ROOT": "http://127.0.0.1/drupal/",
+    "SERVICES_ENDPOINT": "api"
 }
