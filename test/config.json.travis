@@ -1,4 +1,4 @@
 {
-    "SITE_ROOT": "http://127.0.0.1/drupal/",
+    "SITE_ROOT": "http://127.0.0.1/",
     "SERVICES_ENDPOINT": "api"
 }
