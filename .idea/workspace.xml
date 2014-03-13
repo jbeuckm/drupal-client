@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.build" afterPath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="drupal.js.iws" />
@@ -55,14 +56,14 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="23" selection-start="257" selection-end="257" vertical-scroll-proportion="0.3018868">
+            <state line="15" column="51" selection-start="285" selection-end="285" vertical-scroll-proportion="0.3018868">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drupal-js.build" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.build">
+      <file leaf-file-name="drupal-js.profile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile">
           <provider selected="true" editor-type-id="text-editor">
             <state line="6" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
               <folding />
@@ -328,14 +329,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1843" height="943" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15358931" sideWeight="0.6705608" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15358931" sideWeight="0.6705608" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -468,7 +469,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.build">
+    <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
           <folding />
@@ -477,7 +478,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="23" selection-start="257" selection-end="257" vertical-scroll-proportion="0.3018868">
+        <state line="15" column="51" selection-start="285" selection-end="285" vertical-scroll-proportion="0.3018868">
           <folding />
         </state>
       </provider>
