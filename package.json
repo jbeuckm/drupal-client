@@ -2,7 +2,21 @@
   "name": "drupal.js",
   "version": "0.0.1",
   "description": "Vanilla Drupal Javascript Adapter",
-  "main": "drupal.js",
+
+  "main": "./lib/drupal",
+
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jbeuckm/drupal.js.git"
+  },
+  "keywords": [
+    "drupal",
+    "rest",
+    "services",
+    "titanium",
+    "node"
+  ],
+
   "directories": {
     "test": "test"
   },
@@ -16,6 +30,7 @@
   "scripts":{
     "test": "jasmine-node test/*.spec.js"
   },
+
   "author": "Joe Beuckman",
   "license": "Don't read software licenses. Don't write software licenses."
 }
