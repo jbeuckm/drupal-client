@@ -132,7 +132,7 @@ describe("Drupal Tests", function () {
                         success = true;
                     },
                     function (err) {
-                        Ti.API.error(err);
+                        console.log(err);
                         done = true;
                         success = false;
                     }

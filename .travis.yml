@@ -1,8 +1,24 @@
-language: node_js
-node_js:
-    - "0.8"
+language: php
+
+php:
+  - 5.3
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
 before_script:
-    - "npm i -g jasmine-node"
+  - "mysql -e 'create database drupal;'"
+  - pear channel-discover pear.drush.org
+  - pear install drush/drush
+  - phpenv rehash
+  - drush make rest.build ../rest
+  - cd ../rest
+  - sudo chmod -R 777 sites/all/modules
+  - drush si rest --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=REST@2014 --site-mail=admin@example.com --site-name="rest" --yes
+  - drush cc all --yes
+  - "npm i -g jasmine-node"
 branches:
     only:
         - master
