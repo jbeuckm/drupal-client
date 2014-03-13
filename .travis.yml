@@ -13,10 +13,10 @@ before_script:
   - pear channel-discover pear.drush.org
   - pear install drush/drush
   - phpenv rehash
-  - drush make --no-core rest.build ../rest
-  - cd ../rest
+  - drush make --no-core drupal-js.build ../drupal-js
+  - cd ../drupal-js
   - sudo chmod -R 777 sites/all/modules
-  - drush si rest --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=REST@2014 --site-mail=admin@example.com --site-name="rest" --yes
+  - drush si drupal-js --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=REST@2014 --site-mail=admin@example.com --site-name="drupal-js" --yes
   - drush cc all --yes
   - "npm i -g jasmine-node"
 branches:
