@@ -4,6 +4,8 @@ core = 7.x
 projects[] = drupal
 
 projects[services] = 3.4
+projects[] = ctools
+projects[] = entity
 
 ; projects[services_test_endpoint][download][type] = "git"
 ; projects[services_test_endpoint][download][branch] = "7.x-1.0-alpha1"
