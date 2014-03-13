@@ -1,7 +1,4 @@
 api = 2
-core = 7.x
-
-projects[l10n_install][type] = core
-projects[l10n_install][version] = 1.0
+core = 7.26
 
 projects[services] = 3.4
