@@ -55,7 +55,7 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="33" selection-start="761" selection-end="761" vertical-scroll-proportion="0.4025157">
+            <state line="21" column="5" selection-start="767" selection-end="767" vertical-scroll-proportion="0.42264152">
               <folding />
             </state>
           </provider>
@@ -541,7 +541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="761" selection-end="761" vertical-scroll-proportion="0.4025157">
+        <state line="21" column="5" selection-start="767" selection-end="767" vertical-scroll-proportion="0.42264152">
           <folding />
         </state>
       </provider>
