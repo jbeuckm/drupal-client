@@ -3,4 +3,4 @@ core = 7.x
 
 projects[] = drupal
 
-;projects[services] = 3.4
+projects[services] = 3.4
