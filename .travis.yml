@@ -13,8 +13,7 @@ before_script:
   - pear channel-discover pear.drush.org
   - pear install drush/drush
   - phpenv rehash
-  - drush make profile/drupal-js/drupal-js.build ../drupal-js
-  - cd ../drupal-js
+  - drush make profile/drupal-js/drupal-js.build .
   - sudo chmod -R 777 sites/all/modules
   - drush si drupal-js --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
   - drush cc all --yes
