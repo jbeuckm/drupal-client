@@ -1,5 +1,4 @@
 api = 2
 core = 7.x
 
-projects[services][subdir] = contrib
-projects[services][version] = 3.4
+projects[services] = 3.4
