@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/drupal-js/drupal-js.build" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="drupal.js.iws" />
@@ -56,7 +55,7 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="24" selection-start="258" selection-end="258" vertical-scroll-proportion="0.3018868">
+            <state line="15" column="49" selection-start="283" selection-end="283" vertical-scroll-proportion="0.3018868">
               <folding />
             </state>
           </provider>
@@ -478,7 +477,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="258" selection-end="258" vertical-scroll-proportion="0.3018868">
+        <state line="15" column="49" selection-start="283" selection-end="283" vertical-scroll-proportion="0.3018868">
           <folding />
         </state>
       </provider>
