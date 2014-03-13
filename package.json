@@ -25,7 +25,7 @@
     "node-persist": "*"
   },
   "devDependencies": {
-
+    "jasmine-node": "*"
   },
   "scripts":{
     "test": "jasmine-node test/*.spec.js"
