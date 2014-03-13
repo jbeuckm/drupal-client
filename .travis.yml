@@ -17,7 +17,6 @@ before_script:
   - sudo chmod -R 777 sites/all/modules
   - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
   - drush cc all --yes
-  - "npm i -g jasmine-node"
   - npm install
 
 script:
