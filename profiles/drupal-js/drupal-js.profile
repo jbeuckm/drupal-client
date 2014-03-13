@@ -5,4 +5,6 @@ projects[] = drupal
 
 projects[services] = 3.4
 
+projects[services_test_endpoint][download][type] = "git"
+projects[services_test_endpoint][download][url] = "http://drupalcode.org/sandbox/jbeuckm/2217233.git"
 
