@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/drupal-js/drupal-js.build" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/drupal-js.build" afterPath="$PROJECT_DIR$/drupal-js/drupal-js.build" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="drupal.js.iws" />
@@ -55,14 +57,14 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="64" selection-start="402" selection-end="402" vertical-scroll-proportion="0.36226416">
+            <state line="15" column="34" selection-start="268" selection-end="268" vertical-scroll-proportion="0.3018868">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="drupal-js.build" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/drupal-js.build">
+        <entry file="file://$PROJECT_DIR$/drupal-js/drupal-js.build">
           <provider selected="true" editor-type-id="text-editor">
             <state line="6" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
               <folding />
@@ -212,6 +214,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drupal-js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -272,6 +288,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/drupal-js" />
       <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
@@ -448,7 +465,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drupal-js.build">
+    <entry file="file://$PROJECT_DIR$/drupal-js/drupal-js.build">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
           <folding />
@@ -457,7 +474,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="64" selection-start="402" selection-end="402" vertical-scroll-proportion="0.36226416">
+        <state line="15" column="34" selection-start="268" selection-end="268" vertical-scroll-proportion="0.3018868">
           <folding />
         </state>
       </provider>
