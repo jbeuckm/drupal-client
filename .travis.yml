@@ -29,11 +29,10 @@ before_script:
 
   # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
   - mysql -e 'create database drupal'
-  - php -d sendmail_path=`which true` `pear config-get php_dir`/drush/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/drupal
+  - php -d sendmail_path=`which true` `pear config-get php_dir`/drush/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/drupal drupal
 
-  - drush --yes pm-enable travis_ci_drupal_module_example
-
-  - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
+  - cd drupal/drupal
+    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
   - drush --yes pm-enable services_test_endpoint
   - drush cc all --yes
 
