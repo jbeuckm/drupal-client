@@ -1,4 +1,4 @@
 {
-    "SITE_ROOT": "http://127.0.0.1:8080/drupal/",
+    "SITE_ROOT": "http://127.0.0.1:8080/",
     "SERVICES_ENDPOINT": "js_api"
 }
