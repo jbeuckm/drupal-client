@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/config.json.travis" afterPath="$PROJECT_DIR$/test/config.json.travis" />
     </list>
     <ignored path="drupal.js.iws" />
@@ -52,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+            <state line="39" column="0" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.718239">
               <folding />
             </state>
           </provider>
@@ -79,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.json.travis" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.json.travis" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/config.json.travis">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="34" selection-start="36" selection-end="36" vertical-scroll-proportion="0.020125786">
+            <state line="1" column="39" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,9 +140,9 @@
         <option value="$PROJECT_DIR$/drupal-js.build" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/build/travis-ci-apache" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
         <option value="$PROJECT_DIR$/test/config.json.travis" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -525,13 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/config.json.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="-5.76">
@@ -546,16 +540,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/test/config.json.example">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/config.json.travis">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="36" selection-end="36" vertical-scroll-proportion="0.020125786">
+        <state line="1" column="39" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.718239">
           <folding />
         </state>
       </provider>
