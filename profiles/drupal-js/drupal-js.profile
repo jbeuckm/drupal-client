@@ -7,7 +7,6 @@ projects[] = views
 projects[] = ctools
 projects[] = entity
 projects[services] = 3.4
-projects[] = rest_server
 
 ; projects[services_test_endpoint][download][type] = "git"
 ; projects[services_test_endpoint][download][branch] = "7.x-1.0-alpha1"
