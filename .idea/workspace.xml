@@ -52,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
+            <state line="25" column="0" selection-start="471" selection-end="471" vertical-scroll-proportion="0.45660377">
               <folding />
             </state>
           </provider>
@@ -79,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.json.travis" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.json.travis" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/config.json.travis">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="39" selection-start="41" selection-end="41" vertical-scroll-proportion="0.020125786">
+            <state line="1" column="39" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -546,16 +546,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/test/config.json.travis">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
+        <state line="1" column="39" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/config.json.travis">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="39" selection-start="41" selection-end="41" vertical-scroll-proportion="0.020125786">
+        <state line="25" column="0" selection-start="471" selection-end="471" vertical-scroll-proportion="0.45660377">
           <folding />
         </state>
       </provider>
