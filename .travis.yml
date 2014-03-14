@@ -29,6 +29,7 @@ before_script:
    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
    - drush en services_test_endpoint --yes
    - drush cc all --yes
+   - drush vset clean_url 1 --yes
    - drush pm-list
 
    - npm install
