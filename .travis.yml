@@ -31,10 +31,6 @@ before_script:
    - drush cc all --yes
    - drush pm-list
 
-   # start a web server on port 8080, run in the background; wait for initialization
-   - drush runserver 127.0.0.1:8080 &
-   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
-
    - npm install
    - cp test/config.json.travis test/config.json
 
