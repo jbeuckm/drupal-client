@@ -32,6 +32,7 @@ before_script:
     - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
   - drush --yes pm-enable services_test_endpoint
   - drush cc all --yes
+  - drush pm-list
 
   # start a web server on port 8080, run in the background; wait for initialization
   - drush runserver 127.0.0.1:8080 &
