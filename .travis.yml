@@ -19,6 +19,7 @@ before_script:
    - sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/default
    - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
    - sudo service apache2 restart
+   # prepare a drupal installation
    - mysql -e 'create database drupal;'
    - pear channel-discover pear.drush.org
    - pear install drush/drush
@@ -27,12 +28,13 @@ before_script:
    - sudo chmod -R 777 sites/all/modules
    - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
    - drush en rest_server --yes
+   # enable a services endpoint with the basics in place for testing
    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
    - drush en services_test_endpoint --yes
    - drush vset clean_url 1 --yes
    - drush cc all --yes
    - drush pm-list
-
+   # prepare the node.js drupal client lib
    - npm install
    - cp test/config.json.travis test/config.json
 
