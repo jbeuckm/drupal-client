@@ -28,8 +28,8 @@ before_script:
    - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
    - drush en services_test_endpoint --yes
-   - drush cc all --yes
    - drush vset clean_url 1 --yes
+   - drush cc all --yes
    - drush pm-list
 
    - npm install
