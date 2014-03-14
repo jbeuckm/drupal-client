@@ -1,4 +1,4 @@
 {
-    "SITE_ROOT": "http://127.0.0.1/",
+    "SITE_ROOT": "http://127.0.0.1:9000/",
     "SERVICES_ENDPOINT": "js_api"
 }
