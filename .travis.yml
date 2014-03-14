@@ -1,45 +1,42 @@
 language: php
 
 php:
-  - 5.3
+  - 5.5
 
 mysql:
   database: drupal
   username: root
   encoding: utf8
 
-before_install:
-  - sudo apt-get update > /dev/null
-
-install:
-  # install php packages required for running a web server from drush on php 5.3
-  - sudo apt-get install -y --force-yes php5-cgi php5-mysql
-
-  # install drush
-  - pear channel-discover pear.drush.org
-  - pear install drush/drush-5.8.0
-  - phpenv rehash
-
 before_script:
+   - sudo apt-get install apache2 libapache2-mod-fastcgi
+   # enable php-fpm
+   - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
+   - sudo a2enmod rewrite actions fastcgi alias
+   - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
+   # configure apache virtual hosts
+   - sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/default
+   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
+   - sudo service apache2 restart
+   - mysql -e 'create database drupal;'
+   - pear channel-discover pear.drush.org
+   - pear install drush/drush
+   - phpenv rehash
+   - drush make profiles/drupal-js/drupal-js.profile .
+   - sudo chmod -R 777 sites/all/modules
+   - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
+   - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
+   - drush en services_test_endpoint --yes
+   - drush cc all --yes
+   - drush pm-list
 
-  - cp test/config.json.travis test/config.json
+   # start a web server on port 8080, run in the background; wait for initialization
+   - drush runserver 127.0.0.1:8080 &
+   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
-  # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
-  - mysql -e 'create database drupal'
-  - php -d sendmail_path=`which true` `pear config-get php_dir`/drush/drush.php --yes core-quick-drupal --profile=profiles/drupal-js/drupal-js.profile --no-server --db-url=mysql://root:@127.0.0.1/drupal drupal
-
-  - cd drupal/drupal
-    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
-  - drush --yes pm-enable services_test_endpoint
-  - drush cc all --yes
-  - drush pm-list
-
-  # start a web server on port 8080, run in the background; wait for initialization
-  - drush runserver 127.0.0.1:8080 &
-  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
-
-  - cd ../..
-  - npm install
+   - npm install
+   - cp test/config.json.travis test/config.json
 
 script:
   - npm test
@@ -47,4 +44,3 @@ script:
 branches:
     only:
         - master
-
