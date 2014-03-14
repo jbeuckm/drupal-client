@@ -26,7 +26,7 @@ before_script:
    - drush make profiles/drupal-js/drupal-js.profile .
    - sudo chmod -R 777 sites/all/modules
    - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
-   - drush en rest_server
+   - drush en rest_server --yes
    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
    - drush en services_test_endpoint --yes
    - drush vset clean_url 1 --yes

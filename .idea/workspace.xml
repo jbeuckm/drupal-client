@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" afterPath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +55,7 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="25" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.56352204">
+            <state line="28" column="31" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.56352204">
               <folding />
             </state>
           </provider>
@@ -556,7 +555,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="25" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.56352204">
+        <state line="28" column="31" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.56352204">
           <folding />
         </state>
       </provider>
