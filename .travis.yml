@@ -35,8 +35,8 @@ before_script:
    - drush cc all --yes
    - drush pm-list
    # prepare the node.js drupal client lib
-   - npm install
    - cp test/config.json.travis test/config.json
+   - npm install
 
 script:
   - npm test
