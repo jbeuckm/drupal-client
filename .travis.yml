@@ -36,6 +36,7 @@ before_script:
    - drush pm-list
    # prepare the node.js drupal client lib
    - cp test/config.json.travis test/config.json
+   - sudo chmod 777 .
    - npm install
 
 script:
