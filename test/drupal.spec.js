@@ -120,7 +120,7 @@ describe("Drupal Tests", function () {
         });
 
 
-        it("can load user entity", function () {
+        xit("can load user entity", function () {
 
             var done = false;
             var success = false;
@@ -177,7 +177,7 @@ describe("Drupal Tests", function () {
         });
 
 
-        it("can log out", function () {
+        xit("can log out", function () {
 
             var loggedout = false;
             var done = false;
