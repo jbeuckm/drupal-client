@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/travis-ci-apache" afterPath="$PROJECT_DIR$/build/travis-ci-apache" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="drupal.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="drupal.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/drupal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="250" column="0" selection-start="6043" selection-end="6043" vertical-scroll-proportion="0.928009">
+            <state line="250" column="0" selection-start="6043" selection-end="6043" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="travis-ci-apache" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build/travis-ci-apache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="28" selection-start="236" selection-end="236" vertical-scroll-proportion="0.21136063">
               <folding />
             </state>
           </provider>
@@ -82,20 +91,21 @@
         <option value="$PROJECT_DIR$/rest.build" />
         <option value="$PROJECT_DIR$/drupal-js.build" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/build/travis-ci-apache" />
         <option value="$PROJECT_DIR$/test/config.json.travis" />
         <option value="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/lib/httpClient.js" />
         <option value="$PROJECT_DIR$/lib/drupal.js" />
+        <option value="$PROJECT_DIR$/build/travis-ci-apache" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1902" />
-    <option name="height" value="1063" />
+    <option name="x" value="22" />
+    <option name="y" value="68" />
+    <option name="width" value="1869" />
+    <option name="height" value="905" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -123,6 +133,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -203,16 +223,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,48 +230,18 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="10ef6701-3617-41ee-bf10-840d6e9cc7b3">
+      <server id="1892bf16-9e3b-4a17-b56d-59156914414c">
         <serverdata />
       </server>
-      <server id="2055d95f-7aa6-4480-b671-739e5aca6ea6">
+      <server id="c3ac298f-0af2-4e6c-90f2-24ac2483364c">
         <serverdata />
       </server>
-      <server id="2b923f94-abb1-4fce-9db7-121b789703b3">
-        <serverdata />
-      </server>
-      <server id="64004da9-482e-4300-b8e8-97b09a425c1d">
-        <serverdata />
-      </server>
-      <server id="6a70631f-a445-4e50-8704-79b1a9ab8996">
-        <serverdata />
-      </server>
-      <server id="740cd604-3352-47b9-8314-86cd0fa5017d">
-        <serverdata />
-      </server>
-      <server id="7bc07d37-9ec5-4713-90a0-92dabf0d9479">
-        <serverdata />
-      </server>
-      <server id="8da5c6bb-8371-4dde-b035-74bd98dcc939">
-        <serverdata />
-      </server>
-      <server id="93ce8e28-754d-44ae-9ca9-082c6eaa5e07">
-        <serverdata />
-      </server>
-      <server id="93d79af8-eb94-4d78-bf7d-830c96c8dbb8">
-        <serverdata />
-      </server>
-      <server id="949879e4-b093-4eda-b5f8-f8d7c2c9a7cd">
-        <serverdata />
-      </server>
-      <server id="ab45e607-a86f-4567-9e44-ea3abfa49378">
-        <serverdata />
-      </server>
-      <server id="f45c5874-415e-4291-8f30-650361c89b20">
+      <server id="eac3d98a-79ce-4cf5-a459-2bfcc1c2d694">
         <serverdata />
       </server>
     </servers>
@@ -281,18 +261,10 @@
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
-      <method>
-        <option name="PhingTarget" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method>
-        <option name="FtpUpload" enabled="false">
-          <server_id />
-          <server_name />
-        </option>
-        <option name="PhingTarget" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <list size="0" />
   </component>
@@ -324,23 +296,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1902" height="1063" extended-state="0" />
+    <frame x="22" y="68" width="1869" height="905" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15355603" sideWeight="0.8172691" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15523861" sideWeight="0.8172691" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -370,7 +342,6 @@
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
@@ -380,7 +351,6 @@
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
@@ -403,9 +373,18 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/config.json">
+    <entry file="file://$PROJECT_DIR$/lib/httpClient.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" />
+        <state line="14" column="65" selection-start="315" selection-end="329" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="21" selection-start="1632" selection-end="1632" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -438,18 +417,6 @@
         <state line="27" column="4" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/travis-ci-apache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="73" selection-start="476" selection-end="481" vertical-scroll-proportion="0.29726776">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/config.json.example">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="131" vertical-scroll-proportion="0.0" />
@@ -457,16 +424,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/config.json.travis">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="36" selection-end="36" vertical-scroll-proportion="0.01748634">
-          <folding />
-        </state>
+        <state line="1" column="34" selection-start="36" selection-end="36" vertical-scroll-proportion="0.01748634" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.16179775">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.16179775" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
@@ -492,7 +455,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/drupal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="0" selection-start="6043" selection-end="6043" vertical-scroll-proportion="0.928009">
+        <state line="250" column="0" selection-start="6043" selection-end="6043" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/travis-ci-apache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="28" selection-start="236" selection-end="236" vertical-scroll-proportion="0.21136063">
           <folding />
         </state>
       </provider>
