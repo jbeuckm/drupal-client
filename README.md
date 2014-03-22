@@ -33,11 +33,11 @@ drupal.systemConnect(
 
 ### Create an account
 
-```javascript 
+```javascript
 var user = {
 	name: 'my_new_username',
 	pass: 'my_new_password',
-	mail: 'my_email@titaniumdrupal.com'
+	mail: 'my_email@drupal.js'
 };
 
 drupal.createAccount(user,
@@ -50,7 +50,7 @@ drupal.createAccount(user,
 		console.log('boo :(');
 	},
 	headers //optional
-);	
+);
 ```
 
 ### Login
@@ -78,7 +78,7 @@ drupal.login(my_username, my_password,
 This updates an account profile on the server. `userObject` is a user object that may have been received from a login request (see above).
 
 ```javascript
-drupal.putResource("user/"+userObject.uid, userObject, 
+drupal.putResource("user/"+userObject.uid, userObject,
 	function(userData) {
 		console.log('user has been updated.');
 	},
@@ -86,7 +86,7 @@ drupal.putResource("user/"+userObject.uid, userObject,
 		console.log('user update failed.');
 	}
 );
-	
+
 ```
 ### Make Requests
 
