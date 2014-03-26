@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drupal.js" afterPath="$PROJECT_DIR$/lib/drupal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/drupal.spec.js" afterPath="$PROJECT_DIR$/test/drupal.spec.js" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="drupal.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="drupal.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/drupal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="74" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.2046332">
+            <state line="388" column="78" selection-start="9185" selection-end="9254" vertical-scroll-proportion="-7.6153846">
               <folding />
             </state>
           </provider>
@@ -38,7 +38,25 @@
       <file leaf-file-name="drupal.spec.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="47" selection-start="4807" selection-end="4807" vertical-scroll-proportion="0.0">
+            <state line="197" column="0" selection-start="5133" selection-end="5133" vertical-scroll-proportion="-15.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.json.example" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/config.json.example">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="0" selection-end="131" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="24" selection-start="77" selection-end="77" vertical-scroll-proportion="0.05882353">
               <folding />
             </state>
           </provider>
@@ -77,7 +95,6 @@
       <list>
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/test/config.json.example" />
-        <option value="$PROJECT_DIR$/test/config.json" />
         <option value="$PROJECT_DIR$/rest.build" />
         <option value="$PROJECT_DIR$/drupal-js.build" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -86,9 +103,10 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/lib/httpClient.js" />
         <option value="$PROJECT_DIR$/build/travis-ci-apache" />
-        <option value="$PROJECT_DIR$/test/drupal.spec.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/drupal.js" />
+        <option value="$PROJECT_DIR$/test/drupal.spec.js" />
+        <option value="$PROJECT_DIR$/test/config.json" />
       </list>
     </option>
   </component>
@@ -329,9 +347,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1833" height="973" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298122" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298122" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -409,11 +427,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/httpClient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="65" selection-start="315" selection-end="329" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="21" selection-start="1632" selection-end="1632" vertical-scroll-proportion="0.0" />
@@ -444,11 +457,6 @@
         <state line="27" column="4" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/config.json.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="131" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/config.json.travis">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="34" selection-start="36" selection-end="36" vertical-scroll-proportion="0.01748634" />
@@ -457,11 +465,6 @@
     <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.16179775" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="47" selection-start="4807" selection-end="4807" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/httpClient.js">
@@ -490,7 +493,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/drupal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="74" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.2046332">
+        <state line="388" column="78" selection-start="9185" selection-end="9254" vertical-scroll-proportion="-7.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="0" selection-start="5133" selection-end="5133" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/config.json.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="0" selection-end="131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="24" selection-start="77" selection-end="77" vertical-scroll-proportion="0.05882353">
           <folding />
         </state>
       </provider>

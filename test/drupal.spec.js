@@ -120,7 +120,7 @@ describe("Drupal Tests", function () {
         });
 
 
-        xit("can load user entity", function () {
+        it("can load user entity", function () {
 
             var done = false;
             var success = false;
@@ -145,39 +145,66 @@ describe("Drupal Tests", function () {
         });
 
 
-        xit("can create a node", function () {
+      it("can create a node", function () {
 
-            var success = false;
-            var done = false;
+        var success = false;
+        var done = false;
 
-            var node = {
-                type:"article",
-                title:drupal.basicField("test node title"),
-                body:drupal.basicField("test node body"),
-            };
+        var node = {
+          type:"article",
+          title:drupal.basicField("test node title"),
+          body:drupal.basicField("test node body"),
+        };
 
-            runs(function () {
-                drupal.postResource('node', node,
-                    function () {
-                        console.log('POST succeeded');
-                        success = true;
-                        done = true;
-                    },
-                    function (err) {
-                        console.log(err);
-                        success = false;
-                        done = true;
-                    }
-                );
-            });
-
-            waitsFor(function () {
-                return done;
-            }, 'timeout posting a node', 2500);
+        runs(function () {
+          drupal.postResource('node', node,
+            function () {
+              console.log('POST succeeded');
+              success = true;
+              done = true;
+            },
+            function (err) {
+              console.log(err);
+              success = false;
+              done = true;
+            }
+          );
         });
 
+        waitsFor(function () {
+          return done;
+        }, 'timeout posting a node', 2500);
+      });
 
-        xit("can log out", function () {
+
+      it("can upload a file", function () {
+
+        var success = false;
+        var done = false;
+
+        runs(function () {
+          drupal.uploadFile(base64data, filename, filesize,
+            function () {
+              console.log('POST succeeded');
+              success = true;
+              done = true;
+            },
+            function (err) {
+              console.log(err);
+              success = false;
+              done = true;
+            }
+          );
+        });
+
+        waitsFor(function () {
+          return done;
+        }, 'timeout posting a node', 2500);
+
+      });
+
+
+      it("can log out", function () {
 
             var loggedout = false;
             var done = false;
