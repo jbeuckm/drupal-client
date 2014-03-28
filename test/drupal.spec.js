@@ -183,6 +183,10 @@ describe("Drupal Tests", function () {
       var success = false;
       var done = false;
 
+      var base64data = btoa("test string");
+      var filename = "test.txt";
+      var filesize = base64data.length;
+
       runs(function () {
         drupal.uploadFile(base64data, filename, filesize,
           function () {
