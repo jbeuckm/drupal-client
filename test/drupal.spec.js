@@ -178,7 +178,7 @@ describe("Drupal Tests", function () {
     });
 
 
-    it("can upload a file", function () {
+    xit("can upload a file", function () {
 
       var success = false;
       var done = false;
