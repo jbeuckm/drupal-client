@@ -28,25 +28,25 @@ before_script:
 
   # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
   - mysql -e 'create database drupal'
-   - drush make profiles/drupal-js/drupal-js.profile .
-   - sudo chmod -R 777 sites/all/modules
-   - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
-   - drush en rest_server --yes
+  - drush make profiles/drupal-js/drupal-js.profile .
+  - sudo chmod -R 777 sites/all/modules
+  - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
+  - drush en rest_server --yes
 
-   # enable a services endpoint with the basics in place for testing
-   - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
-   - drush en services_test_endpoint --yes
-   - drush cc all --yes
-   - drush pm-list
+  # enable a services endpoint with the basics in place for testing
+  - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
+  - drush en services_test_endpoint --yes
+  - drush cc all --yes
+  - drush pm-list
 
   # start a web server on port 8080, run in the background; wait for initialization
   - drush runserver 127.0.0.1:8080 &
   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
-   # prepare the node.js drupal client lib
-   - cp test/config.json.travis test/config.json
-   - sudo chmod 777 .
-   - npm install
+  # prepare the node.js drupal client lib
+  - cp test/config.json.travis test/config.json
+  - sudo chmod 777 .
+  - npm install
 
 script:
   - npm test
