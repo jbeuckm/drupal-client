@@ -32,8 +32,8 @@ before_script:
    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
    - drush en services_test_endpoint --yes
    - drush vset clean_url 1 --yes
-   - drush vset user_email_verification 0
-   - drush vset user_register 1
+   - drush vset user_email_verification 0 --yes
+   - drush vset user_register 1 --yes
    - drush cc all --yes
    - drush pm-list
    # prepare the node.js drupal client lib
