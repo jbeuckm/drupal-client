@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drupal.js" afterPath="$PROJECT_DIR$/lib/drupal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/drupal.spec.js" afterPath="$PROJECT_DIR$/test/drupal.spec.js" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +30,7 @@
       <file leaf-file-name="drupal.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/drupal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="388" column="78" selection-start="9185" selection-end="9254" vertical-scroll-proportion="0.0">
+            <state line="393" column="27" selection-start="9357" selection-end="9357" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -37,7 +39,7 @@
       <file leaf-file-name="drupal.spec.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="187" column="39" selection-start="3992" selection-end="3992" vertical-scroll-proportion="0.0">
+            <state line="204" column="28" selection-start="4408" selection-end="4408" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,7 +57,7 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="37" selection-start="1529" selection-end="1561" vertical-scroll-proportion="0.65090907">
+            <state line="33" column="0" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.6121212">
               <folding />
             </state>
           </provider>
@@ -84,10 +86,10 @@
         <option value="$PROJECT_DIR$/lib/httpClient.js" />
         <option value="$PROJECT_DIR$/build/travis-ci-apache" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/lib/drupal.js" />
         <option value="$PROJECT_DIR$/test/config.json" />
-        <option value="$PROJECT_DIR$/test/drupal.spec.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/lib/drupal.js" />
+        <option value="$PROJECT_DIR$/test/drupal.spec.js" />
       </list>
     </option>
   </component>
@@ -468,14 +470,16 @@
         <state line="27" column="4" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/drupal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="388" column="78" selection-start="9185" selection-end="9254" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="39" selection-start="3992" selection-end="3992" vertical-scroll-proportion="0.0">
+        <state line="204" column="28" selection-start="4408" selection-end="4408" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/drupal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="393" column="27" selection-start="9357" selection-end="9357" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -489,7 +493,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="37" selection-start="1529" selection-end="1561" vertical-scroll-proportion="0.65090907">
+        <state line="33" column="0" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.6121212">
           <folding />
         </state>
       </provider>

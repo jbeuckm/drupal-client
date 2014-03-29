@@ -2,9 +2,7 @@
   "name": "drupal.js",
   "version": "0.0.1",
   "description": "Vanilla Drupal Javascript Adapter",
-
   "main": "./lib/drupal",
-
   "repository": {
     "type": "git",
     "url": "git@github.com:jbeuckm/drupal.js.git"
@@ -16,7 +14,6 @@
     "titanium",
     "node"
   ],
-
   "directories": {
     "test": "test"
   },
@@ -25,12 +22,12 @@
     "node-persist": "*"
   },
   "devDependencies": {
-    "jasmine-node": "*"
+    "jasmine-node": "*",
+    "node-inspector": "~0.7.2"
   },
-  "scripts":{
+  "scripts": {
     "test": "jasmine-node test/*.spec.js"
   },
-
   "author": "Joe Beuckman",
   "license": "Don't read software licenses. Don't write software licenses."
 }

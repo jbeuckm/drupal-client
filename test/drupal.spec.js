@@ -183,7 +183,7 @@ describe("Drupal Tests", function () {
       var success = false;
       var done = false;
 
-      var base64data = btoa("test string");
+      var base64data = new Buffer('Hello World').toString('base64');
       var filename = "test.txt";
       var filesize = base64data.length;
 
