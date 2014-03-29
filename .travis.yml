@@ -1,41 +1,48 @@
 language: php
 
 php:
-  - 5.5
+  - 5.3
 
 mysql:
   database: drupal
   username: root
   encoding: utf8
 
+before_install:
+  - sudo apt-get update > /dev/null
+
+install:
+  # install php packages required for running a web server from drush on php 5.3
+  - sudo apt-get install -y --force-yes php5-cgi php5-mysql
+
+  # add composer's global bin directory to the path
+  # see: https://github.com/drush-ops/drush#install---composer
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+  # install drush globally
+  - composer global require drush/drush:6.*
+
 before_script:
-   - sudo apt-get install apache2 libapache2-mod-fastcgi
-   # enable php-fpm
-   - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
-   - sudo a2enmod rewrite actions fastcgi alias
-   - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
-   # configure apache virtual hosts
-   - sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/default
-   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
-   - sudo service apache2 restart
-   # prepare a drupal installation
-   - mysql -e 'create database drupal;'
-   - pear channel-discover pear.drush.org
-   - pear install drush/drush
-   - phpenv rehash
+  # navigate out of module directory to prevent blown stack by recursive module lookup
+  - cd ../..
+
+  # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
+  - mysql -e 'create database drupal'
    - drush make profiles/drupal-js/drupal-js.profile .
    - sudo chmod -R 777 sites/all/modules
    - drush si --db-url="mysql://root:@127.0.0.1/drupal" --account-name="admin" --account-pass="REST@2014" --site-mail="admin@example.com" --site-name="drupal-js" --yes
    - drush en rest_server --yes
+
    # enable a services endpoint with the basics in place for testing
    - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
    - drush en services_test_endpoint --yes
-   - drush vset clean_url 1 --yes
-   - drush vset user_email_verification 0 --yes
-   - drush vset user_register 1 --yes
    - drush cc all --yes
    - drush pm-list
+
+  # start a web server on port 8080, run in the background; wait for initialization
+  - drush runserver 127.0.0.1:8080 &
+  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+
    # prepare the node.js drupal client lib
    - cp test/config.json.travis test/config.json
    - sudo chmod 777 .
@@ -47,3 +54,4 @@ script:
 branches:
     only:
         - master
+
