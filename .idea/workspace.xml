@@ -46,7 +46,7 @@
       <file leaf-file-name="drupal.spec.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="201" column="27" selection-start="4266" selection-end="4266" vertical-scroll-proportion="0.33917397">
+            <state line="200" column="62" selection-start="4237" selection-end="4237" vertical-scroll-proportion="0.31914893">
               <folding />
             </state>
           </provider>
@@ -488,7 +488,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="27" selection-start="4266" selection-end="4266" vertical-scroll-proportion="0.33917397">
+        <state line="200" column="62" selection-start="4237" selection-end="4237" vertical-scroll-proportion="0.31914893">
           <folding />
         </state>
       </provider>

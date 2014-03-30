@@ -198,8 +198,7 @@ describe("Drupal", function () {
       var node = {
         type: "complex_content",
         title: "complex test node",
-        body: drupal.basicField({"value":"complex node body"}),
-        field_unix_date: []
+        body: drupal.basicField({"value":"complex node body"})
       };
 
       runs(function () {
