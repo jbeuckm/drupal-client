@@ -1,4 +1,4 @@
-describe("Drupal Tests", function () {
+describe("Drupal", function () {
 
   var drupal = require('../lib/drupal.js');
 
@@ -118,6 +118,9 @@ describe("Drupal Tests", function () {
         return done;
       }, 'timeout logging in', 2500);
 
+      runs(function () {
+        expect(loggedin).toEqual(true);
+      });
     });
 
 
@@ -143,6 +146,10 @@ describe("Drupal Tests", function () {
       waitsFor(function () {
         return done;
       }, 'timeout loading my user', 2500);
+
+      runs(function () {
+        expect(success).toEqual(true);
+      });
     });
 
 
@@ -154,7 +161,7 @@ describe("Drupal Tests", function () {
       var node = {
         type: "article",
         title: drupal.basicField("test node title"),
-        body: drupal.basicField("test node body"),
+        body: drupal.basicField("test node body")
       };
 
       runs(function () {
@@ -175,6 +182,11 @@ describe("Drupal Tests", function () {
       waitsFor(function () {
         return done;
       }, 'timeout posting a node', 2500);
+
+      runs(function () {
+        expect(success).toEqual(true);
+      });
+
     });
 
 
@@ -206,6 +218,10 @@ describe("Drupal Tests", function () {
         return done;
       }, 'timeout posting a node', 2500);
 
+      runs(function () {
+        expect(success).toEqual(true);
+      });
+
     });
 
 
@@ -235,6 +251,10 @@ describe("Drupal Tests", function () {
       waitsFor(function () {
         return done;
       }, "timeout logging out", 2500);
+
+      runs(function () {
+        expect(loggedout).toEqual(false);
+      });
 
     });
 
