@@ -237,7 +237,8 @@ describe("Drupal", function () {
               loggedout = true;
               done = true;
             },
-            function () {
+            function (err) {
+              console.log(err);
               loggedout = false;
               done = true;
             }
