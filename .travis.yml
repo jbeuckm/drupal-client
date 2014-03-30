@@ -20,7 +20,6 @@ install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
   # install drush globally
-  - composer self-update
   - composer global require drush/drush:6.*
 
 before_script:
