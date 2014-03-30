@@ -190,7 +190,7 @@ describe("Drupal", function () {
     });
 
 
-    xit("can create a node with field types", function () {
+    it("can create a node with field types", function () {
 
       var success = false;
       var done = false;
@@ -199,7 +199,7 @@ describe("Drupal", function () {
         type: "complex_content",
         title: "complex test node",
         body: drupal.basicField({"value":"complex node body"}),
-
+        field_unix_date: []
       };
 
       runs(function () {
