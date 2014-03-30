@@ -190,7 +190,7 @@ describe("Drupal", function () {
     });
 
 
-    it("can create a node with field types", function () {
+    xit("can create a node with field types", function () {
 
       var success = false;
       var done = false;
