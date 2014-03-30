@@ -1,6 +1,7 @@
 describe("Drupal", function () {
 
   var drupal = require('../lib/drupal.js');
+  var timeout = 2500;
 
   try {
     var cfg = require("./config.json");
@@ -50,7 +51,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, 'timeout connecting', 2500);
+      }, 'timeout connecting', timeout);
 
       runs(function () {
         expect(connected).toEqual(true);
@@ -83,7 +84,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, 'timeout creating account', 2500);
+      }, 'timeout creating account', timeout);
 
       runs(function () {
         expect(error).toEqual('');
@@ -116,7 +117,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, 'timeout logging in', 2500);
+      }, 'timeout logging in', timeout);
 
       runs(function () {
         expect(loggedin).toEqual(true);
@@ -145,7 +146,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, 'timeout loading my user', 2500);
+      }, 'timeout loading my user', timeout);
 
       runs(function () {
         expect(success).toEqual(true);
@@ -180,7 +181,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, 'timeout posting a node', 2500);
+      }, 'timeout posting a node', timeout);
 
       runs(function () {
         expect(success).toEqual(true);
@@ -198,7 +199,7 @@ describe("Drupal", function () {
         type: "complex_content",
         title: "complex test node",
         body: drupal.basicField({"value":"complex node body"}),
-        
+
       };
 
       runs(function () {
@@ -217,7 +218,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, 'timeout posting a complex node', 2500);
+      }, 'timeout posting a complex node', timeout);
 
       runs(function () {
         expect(success).toEqual(true);
@@ -252,7 +253,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, 'timeout posting a node', 2500);
+      }, 'timeout posting a node', timeout);
 
       runs(function () {
         expect(success).toEqual(true);
@@ -287,7 +288,7 @@ describe("Drupal", function () {
 
       waitsFor(function () {
         return done;
-      }, "timeout logging out", 2500);
+      }, "timeout logging out", timeout);
 
     });
 
@@ -337,7 +338,7 @@ describe("Drupal", function () {
 
         waitsFor(function () {
           return done;
-        }, "timeout logging out", 2500);
+        }, "timeout logging out", timeout);
 
       });
 
