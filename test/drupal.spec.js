@@ -189,6 +189,43 @@ describe("Drupal", function () {
     });
 
 
+    it("can create a node with field types", function () {
+
+      var success = false;
+      var done = false;
+
+      var node = {
+        type: "complex_content",
+        title: "complex test node",
+        body: drupal.basicField({"value":"complex node body"}),
+        
+      };
+
+      runs(function () {
+        drupal.createNode(node,
+          function () {
+            success = true;
+            done = true;
+          },
+          function (err) {
+            console.log(err);
+            success = false;
+            done = true;
+          }
+        );
+      });
+
+      waitsFor(function () {
+        return done;
+      }, 'timeout posting a complex node', 2500);
+
+      runs(function () {
+        expect(success).toEqual(true);
+      });
+
+    });
+
+
     xit("can upload a file", function () {
 
       var success = false;
