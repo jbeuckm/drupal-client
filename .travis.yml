@@ -35,11 +35,11 @@ before_script:
   - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
   - drush en services_test_endpoint --yes
 
-  - git clone http://git.drupal.org/sandbox/jbeuckm/2229285.git sites/all/modules/test_content_type
-  - drush en test_content_type --yes
-
   - drush cc all --yes
   - drush pm-list
+
+  - git clone http://git.drupal.org/sandbox/jbeuckm/2229285.git sites/all/modules/test_content_type
+  - drush en test_content_type --yes
 
   # start a web server on port 8080, run in the background; wait for initialization
   - drush runserver 127.0.0.1:8080 &
