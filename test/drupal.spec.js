@@ -160,14 +160,13 @@ describe("Drupal", function () {
 
       var node = {
         type: "article",
-        title: drupal.basicField("test node title"),
-        body: drupal.basicField("test node body")
+        title: "test node title",
+        body: drupal.basicField({"value":"test node body"})
       };
 
       runs(function () {
-        drupal.postResource('node', node,
+        drupal.createNode(node,
           function () {
-            console.log('POST succeeded');
             success = true;
             done = true;
           },
@@ -252,10 +251,6 @@ describe("Drupal", function () {
       waitsFor(function () {
         return done;
       }, "timeout logging out", 2500);
-
-      runs(function () {
-        expect(loggedout).toEqual(false);
-      });
 
     });
 
