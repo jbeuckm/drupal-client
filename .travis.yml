@@ -10,7 +10,7 @@ mysql:
 
 before_install:
   - sudo apt-get update > /dev/null
-  - /home/travis/.phpenv/versions/5.3.27/bin/composer.phar self-update
+  - sudo /home/travis/.phpenv/versions/5.3.27/bin/composer.phar self-update
 
 install:
   # install php packages required for running a web server from drush on php 5.3
