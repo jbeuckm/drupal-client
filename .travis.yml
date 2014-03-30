@@ -10,7 +10,6 @@ mysql:
 
 before_install:
   - sudo apt-get update > /dev/null
-  - sudo composer self-update
 
 install:
   # install php packages required for running a web server from drush on php 5.3
@@ -21,6 +20,7 @@ install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
   # install drush globally
+  - composer self-update
   - composer global require drush/drush:6.*
 
 before_script:
