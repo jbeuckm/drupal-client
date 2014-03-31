@@ -200,13 +200,16 @@ describe("Drupal", function () {
         type: "complex_content",
         title: "complex test node",
         body: dfs.structureField("complex node body"),
-        field_bool: dfs.structureField('1'),
-        field_decimal: dfs.structureField('.1'),
-        field_float: dfs.structureField('2.3'),
-        field_integer: dfs.structureField(4)
+        field_bool: dfs.structureField(1),
+        field_decimal: dfs.structureField(.1),
+        field_float: dfs.structureField(2.3),
+        field_integer: dfs.structureField(4),
+
+//        field_date: dfs.structureField(new Date()),
+//        field_iso_date: dfs.structureField(new Date())
 
       };
-
+console.log(JSON.stringify(node));
       runs(function () {
         drupal.createNode(node,
           function () {
