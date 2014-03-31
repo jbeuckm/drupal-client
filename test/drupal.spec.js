@@ -2,6 +2,7 @@ describe("Drupal", function () {
 
   var drupal = require('../lib/drupal.js');
   var dfs = require('../lib/drupal_field_structure.js');
+
   var timeout = 2500;
 
   try {
@@ -163,12 +164,48 @@ describe("Drupal", function () {
       var node = {
         type: "article",
         title: "test node title",
-        body: dfs.structureField({"value":"test node body"})
+        body: dfs.structureField({"value": "test node body"})
       };
 
       runs(function () {
         drupal.createNode(node,
           function () {
+            success = true;
+            done = true;
+          },
+          function (err) {
+            console.log(err);
+            success = false;
+            done = true;
+          }
+        );
+      });
+
+      waitsFor(function () {
+        return done;
+      }, 'timeout posting a node', timeout);
+
+      runs(function () {
+        expect(success).toEqual(true);
+      });
+
+    });
+
+
+    it("can upload a file", function () {
+
+      var success = false;
+      var done = false;
+
+      var filename = "image.png";
+      var data = require('fs').readFileSync("./test/"+filename);
+      var base64data = data.toString('base64');
+      var filesize = data.length;
+
+      runs(function () {
+        drupal.uploadFile(base64data, filename, filesize,
+          function (response) {
+            console.log(response);
             success = true;
             done = true;
           },
@@ -216,7 +253,7 @@ describe("Drupal", function () {
 
       };
 
-console.log(JSON.stringify(node));
+      console.log(JSON.stringify(node));
       runs(function () {
         drupal.createNode(node,
           function () {
@@ -234,41 +271,6 @@ console.log(JSON.stringify(node));
       waitsFor(function () {
         return done;
       }, 'timeout posting a complex node', timeout);
-
-      runs(function () {
-        expect(success).toEqual(true);
-      });
-
-    });
-
-
-    xit("can upload a file", function () {
-
-      var success = false;
-      var done = false;
-
-      var base64data = new Buffer('Hello World').toString('base64');
-      var filename = "test.txt";
-      var filesize = base64data.length;
-
-      runs(function () {
-        drupal.uploadFile(base64data, filename, filesize,
-          function () {
-            console.log('POST succeeded');
-            success = true;
-            done = true;
-          },
-          function (err) {
-            console.log(err);
-            success = false;
-            done = true;
-          }
-        );
-      });
-
-      waitsFor(function () {
-        return done;
-      }, 'timeout posting a node', timeout);
 
       runs(function () {
         expect(success).toEqual(true);
