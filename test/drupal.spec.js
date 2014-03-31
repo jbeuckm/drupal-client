@@ -1,6 +1,7 @@
 describe("Drupal", function () {
 
   var drupal = require('../lib/drupal.js');
+  var dfs = require('../lib/drupal_field_structure.js');
   var timeout = 2500;
 
   try {
@@ -162,7 +163,7 @@ describe("Drupal", function () {
       var node = {
         type: "article",
         title: "test node title",
-        body: drupal.basicField({"value":"test node body"})
+        body: dfs.structureField({"value":"test node body"})
       };
 
       runs(function () {
@@ -198,7 +199,12 @@ describe("Drupal", function () {
       var node = {
         type: "complex_content",
         title: "complex test node",
-        body: drupal.basicField({"value":"complex node body"})
+        body: dfs.structureField("complex node body"),
+        field_bool: dfs.structureField(1),
+        field_decimal: dfs.structureField(.1),
+        field_float: dfs.structureField(2.3),
+        field_integer: dfs.structureField(4)
+
       };
 
       runs(function () {
