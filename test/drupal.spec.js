@@ -196,6 +196,11 @@ describe("Drupal", function () {
       var success = false;
       var done = false;
 
+      var testDate = new Date();
+      testDate.setYear(1977);
+      testDate.setMonth(5);
+      testDate.setDate(27);
+
       var node = {
         type: "complex_content",
         title: "complex test node",
@@ -204,13 +209,13 @@ describe("Drupal", function () {
         field_decimal: dfs.structureField(.1),
         field_float: dfs.structureField(2.3),
         field_integer: dfs.structureField(4),
-        field_multiple: dfs.structureField(["one", "two", "three"])
+        field_multiple: dfs.structureField(["one", "two", "three"]),
 
-//        field_multiple‎: dfs.structureField(["one", "two", "three"]),
-//        field_date: dfs.structureField(new Date()),
-//        field_iso_date: dfs.structureField(new Date())
+//        field_date: dfs.structureField(testDate),
+//        field_iso_date: dfs.structureField(testDate)
 
       };
+
 console.log(JSON.stringify(node));
       runs(function () {
         drupal.createNode(node,
