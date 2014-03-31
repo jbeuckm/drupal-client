@@ -9,7 +9,7 @@ A Javascript client for Drupal 7 / Services 3.4
 1. An installation of Drupal 7.x
 2. Services Module 3.4+ (implements the CSRF token for updated REST security)
 3. REST Server module enabled
-4. A Javascript project
+4. A Javascript project - node or Titanium are known to work
 
 ## Usage
 
