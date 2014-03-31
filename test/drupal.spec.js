@@ -204,7 +204,9 @@ describe("Drupal", function () {
         field_decimal: dfs.structureField(.1),
         field_float: dfs.structureField(2.3),
         field_integer: dfs.structureField(4),
+        field_multiple: dfs.structureField(["one", "two", "three"])
 
+//        field_multiple‎: dfs.structureField(["one", "two", "three"]),
 //        field_date: dfs.structureField(new Date()),
 //        field_iso_date: dfs.structureField(new Date())
 
