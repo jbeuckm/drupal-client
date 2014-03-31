@@ -4,6 +4,7 @@ describe("Drupal", function () {
   var dfs = require('../lib/drupal_field_structure.js');
 
   var timeout = 2500;
+  var fid;
 
   try {
     var cfg = require("./config.json");
@@ -206,6 +207,7 @@ describe("Drupal", function () {
         drupal.uploadFile(base64data, filename, filesize,
           function (response) {
             console.log(response);
+            fid = response.fid;
             success = true;
             done = true;
           },
@@ -247,6 +249,7 @@ describe("Drupal", function () {
         field_float: dfs.structureField(2.3),
         field_integer: dfs.structureField(4),
         field_multiple: dfs.structureField(["one", "two", "three"]),
+        field_file: dfs.structureField(fid, "fid")
 
 //        field_date: dfs.structureField(testDate),
 //        field_iso_date: dfs.structureField(testDate)
