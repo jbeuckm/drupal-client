@@ -29,8 +29,6 @@ Create a Service and enable (at least) the Resources called "system" and "user".
 
 ```javascript
 
-var drupal = require('drupal');
-
 drupal.systemConnect(
 	//success
 	function(sessionData) {
