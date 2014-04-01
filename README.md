@@ -1,10 +1,29 @@
 # drupal.js
 
+A Javascript client for Drupal 7 / Services 3.4
+
 [![Build Status](https://travis-ci.org/jbeuckm/drupal.js.png)](https://travis-ci.org/jbeuckm/drupal.js)
+
+## Requirements
+
+1. An installation of Drupal 7.x
+2. Services Module 3.4+ (implements the CSRF token for updated REST security)
+3. REST Server module enabled
+4. A Javascript project
 
 ## Usage
 
-Create a Service and enable (at least) the Resources called "system" and "user". Rename `config.js.example` to `config.js` and enter the url of your Drupal install and your service endpoint.
+Configure the client for your installation of Drupal 7 / Services 3.4
+
+```javascript
+
+var drupal = require('drupal');
+
+drupal.setRestPath("http://mywebsite.com/", "rest_endpoint");
+
+```
+
+Create a Service and enable (at least) the Resources called "system" and "user".
 
 ### Get a session
 
@@ -86,9 +105,6 @@ drupal.putResource("user/"+userObject.uid, userObject,
 
 The workhorse function of the interface is `makeAuthenticatedRequest(config, success, failure, headers)`. There are a few helper functions included for posting/getting nodes, getting views, uploading files, etc. But they typically all construct a call to `makeAuthenticatedRequest`. This function should facilitate most things that people want to do with Drupal in a mobile environment. It's also easy to use `makeAuthenticatedRequest' to make requests agaist custom Services.
 
-## Requirements
+### Tests
 
-1. An installation of Drupal 7.x
-2. Services Module 3.4+ (implements the CSRF token for updated REST security)
-3. REST Server module enabled
-4. A Javascript project
+To run the tests, rename `test/config.js.example` to `test/config.js` and replace strings with the url of your Drupal install and your service endpoint.
