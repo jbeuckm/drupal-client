@@ -11,16 +11,18 @@ A Javascript client for Drupal 7 / Services 3.4
 3. REST Server module enabled
 4. A Javascript project - node or Titanium are known to work
 
+## Installation
+
+`npm install drupal-client`
+
 ## Usage
 
 Configure the client for your installation of Drupal 7 / Services 3.4
 
 ```javascript
-
 var drupal = require('drupal');
 
 drupal.setRestPath("http://mywebsite.com/", "rest_endpoint");
-
 ```
 
 Create a Service and enable (at least) the Resources called "system" and "user".
@@ -28,7 +30,6 @@ Create a Service and enable (at least) the Resources called "system" and "user".
 ### Get a session
 
 ```javascript
-
 drupal.systemConnect(
 	//success
 	function(sessionData) {
@@ -67,7 +68,6 @@ drupal.createAccount(user,
 ### Login
 
 ```javascript
-
 var my_username = "<DRUPAL USERNAME>";
 var my_password = "<DRUPAL PASSWORD>";
 
