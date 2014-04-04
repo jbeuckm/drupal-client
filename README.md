@@ -99,6 +99,26 @@ drupal.putResource("user/"+userObject.uid, userObject,
 );
 
 ```
+
+### Upload A File
+
+```javascript
+var filename = "uploaded_file.png";
+var data = require('fs').readFileSync("path/to/file/fie.png");
+var base64data = data.toString('base64');
+var filesize = data.length;
+
+drupal.uploadFile(base64data, filename, filesize,
+  function (response) {
+    fid = response.fid;
+  },
+  function (err) {
+    console.log(err);
+  }
+);
+
+```
+
 ### Make Requests
 
 The workhorse function of the interface is `makeAuthenticatedRequest(config, success, failure, headers)`. There are a few helper functions included for posting/getting nodes, getting views, uploading files, etc. But they typically all construct a call to `makeAuthenticatedRequest`. This function should facilitate most things that people want to do with Drupal in a mobile environment. It's also easy to use `makeAuthenticatedRequest' to make requests agaist custom Services.
