@@ -104,7 +104,7 @@ drupal.putResource("user/"+userObject.uid, userObject,
 
 ```javascript
 var filename = "uploaded_file.png";
-var data = require('fs').readFileSync("path/to/file/fie.png");
+var data = require('fs').readFileSync("path/to/file/file.png");
 var base64data = data.toString('base64');
 var filesize = data.length;
 

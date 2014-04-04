@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="drupal.js.iws" />
@@ -38,7 +37,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="0" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.8226601">
+            <state line="106" column="55" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.6059113">
               <folding />
             </state>
           </provider>
@@ -502,7 +501,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.8226601">
+        <state line="106" column="55" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.6059113">
           <folding />
         </state>
       </provider>
