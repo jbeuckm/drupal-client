@@ -1,7 +1,7 @@
 describe("Drupal", function () {
 
   var drupal = require('../lib/drupal.js');
-  var dfs = require('../lib/drupal_field_structure.js');
+  var field = require('../lib/field.js');
 
   var timeout = 2500;
   var fid;
@@ -165,7 +165,7 @@ describe("Drupal", function () {
       var node = {
         type: "article",
         title: "test node title",
-        body: dfs.structureField({"value": "test node body"})
+        body: field.structureField({"value": "test node body"})
       };
 
       runs(function () {
@@ -243,16 +243,16 @@ describe("Drupal", function () {
       var node = {
         type: "complex_content",
         title: "complex test node",
-        body: dfs.structureField("complex node body"),
-        field_bool: dfs.structureField(1),
-        field_decimal: dfs.structureField(.1),
-        field_float: dfs.structureField(2.3),
-        field_integer: dfs.structureField(4),
-        field_multiple: dfs.structureField(["one", "two", "three"]),
-        field_file: dfs.structureField(fid, "fid")
+        body: field.structureField("complex node body"),
+        field_bool: field.structureField(1),
+        field_decimal: field.structureField(.1),
+        field_float: field.structureField(2.3),
+        field_integer: field.structureField(4),
+        field_multiple: field.structureField(["one", "two", "three"]),
+        field_file: field.structureField(fid, "fid")
 
-//        field_date: dfs.structureField(testDate),
-//        field_iso_date: dfs.structureField(testDate)
+//        field_date: field.structureField(testDate),
+//        field_iso_date: field.structureField(testDate)
 
       };
 
@@ -321,7 +321,7 @@ describe("Drupal", function () {
       var params = {
         'arg[]': [1, 2, 3]
       };
-      var request = drupal.serializeDrupalViewsFilter(params);
+      var request = field.serializeDrupalViewsFilter(params);
 
       expect(decodeURIComponent(request)).toEqual('arg[]=1&arg[]=2&arg[]=3');
     });

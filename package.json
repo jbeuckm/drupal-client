@@ -1,11 +1,14 @@
 {
-  "name": "drupal.js",
+  "name": "drupal-client",
   "version": "0.0.1",
-  "description": "Vanilla Drupal Javascript Adapter",
+  "description": "Javascript Drupal Services Client",
   "main": "./lib/drupal",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jbeuckm/drupal.js.git"
+    "url": "git@github.com:jbeuckm/drupal-client.git"
+  },
+  "bugs" : {
+    "url" : "https://github.com/jbeuckm/drupal-client/issues"
   },
   "keywords": [
     "drupal",

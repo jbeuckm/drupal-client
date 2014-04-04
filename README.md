@@ -1,4 +1,4 @@
-# drupal.js
+# drupal-client
 
 A Javascript client for Drupal 7 / Services 3.4
 
