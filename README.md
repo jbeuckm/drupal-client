@@ -97,7 +97,6 @@ drupal.putResource("user/"+userObject.uid, userObject,
 		console.log('user update failed.');
 	}
 );
-
 ```
 
 ### Upload A File
@@ -116,7 +115,31 @@ drupal.uploadFile(base64data, filename, filesize,
     console.log(err);
   }
 );
+```
 
+### Create a New Node
+
+```javascript
+var node = {
+  type: "my_content_type",
+  title: "My New Node",
+  body: field.structureField("Check out this great new node!"),
+  field_bool: field.structureField(1),
+  field_decimal: field.structureField(.1),
+  field_float: field.structureField(2.3),
+  field_integer: field.structureField(4),
+  field_multiple: field.structureField(["one", "two", "three"]),
+  field_file: field.structureField(fid, "fid")
+};
+
+drupal.createNode(node,
+  function (resp) {
+    console.log(resp);
+  },
+  function (err) {
+    console.log(err);
+  }
+);
 ```
 
 ### Make Requests
