@@ -2,7 +2,7 @@
 
 A Javascript client for Drupal 7 / Services 3.4
 
-[![Build Status](https://travis-ci.org/jbeuckm/drupal.js.png)](https://travis-ci.org/jbeuckm/drupal.js)
+[![Build Status](https://travis-ci.org/jbeuckm/drupal-client.png)](https://travis-ci.org/jbeuckm/drupal-client)
 
 ## Requirements
 
