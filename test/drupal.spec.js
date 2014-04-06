@@ -1,7 +1,7 @@
 describe("Drupal", function () {
 
   var drupal = require('../lib/drupal.js');
-  var field = require('../lib/field.js');
+  var field = drupal.field;
 
   var timeout = 2500;
   var fid;
