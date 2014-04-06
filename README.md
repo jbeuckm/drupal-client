@@ -123,13 +123,13 @@ drupal.uploadFile(base64data, filename, filesize,
 var node = {
   type: "my_content_type",
   title: "My New Node",
-  body: field.structureField("Check out this great new node!"),
-  field_bool: field.structureField(1),
-  field_decimal: field.structureField(.1),
-  field_float: field.structureField(2.3),
-  field_integer: field.structureField(4),
-  field_multiple: field.structureField(["one", "two", "three"]),
-  field_file: field.structureField(fid, "fid")
+  body: drupal.field.structureField("Check out this great new node!"),
+  field_bool: drupal.field.structureField(1),
+  field_decimal: drupal.field.structureField(.1),
+  field_float: drupal.field.structureField(2.3),
+  field_integer: drupal.field.structureField(4),
+  field_multiple: drupal.field.structureField(["one", "two", "three"]),
+  field_file: drupal.field.structureField(fid, "fid")
 };
 
 drupal.createNode(node,
