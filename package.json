@@ -7,8 +7,8 @@
     "type": "git",
     "url": "git@github.com:jbeuckm/drupal-client.git"
   },
-  "bugs" : {
-    "url" : "https://github.com/jbeuckm/drupal-client/issues"
+  "bugs": {
+    "url": "https://github.com/jbeuckm/drupal-client/issues"
   },
   "keywords": [
     "drupal",
@@ -21,8 +21,8 @@
     "test": "test"
   },
   "dependencies": {
-    "xmlhttprequest": "*",
-    "node-persist": "*"
+    "node-persist": "*",
+    "xmlhttprequest": "git://github.com/jbeuckm/node-XMLHttpRequest"
   },
   "devDependencies": {
     "jasmine-node": "*",
