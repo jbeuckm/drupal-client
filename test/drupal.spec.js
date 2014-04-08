@@ -61,7 +61,6 @@ describe("Drupal", function () {
       });
     });
 
-//    logoutIfNecessary();
 
     it("registers an account", function () {
 
@@ -95,7 +94,7 @@ describe("Drupal", function () {
 
     });
 
-//    logoutIfNecessary();
+
 
     it("can log in", function () {
 
