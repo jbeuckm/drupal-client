@@ -3,7 +3,7 @@ describe("Drupal", function () {
   var drupal = require('../lib/drupal.js');
   var field = drupal.field;
 
-  var timeout = 2500;
+  var timeout = 5000;
   var fid;
 
   try {
