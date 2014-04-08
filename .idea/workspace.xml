@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/History.md" afterPath="$PROJECT_DIR$/History.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,19 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="19" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0">
+            <state line="2" column="19" selection-start="48" selection-end="48" vertical-scroll-proportion="0.03878788">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="History.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="History.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/History.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="67" selection-start="102" selection-end="102" vertical-scroll-proportion="0.03878788">
+            <state line="2" column="67" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -97,8 +97,8 @@
         <option value="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
         <option value="$PROJECT_DIR$/lib/drupal.js" />
         <option value="$PROJECT_DIR$/test/drupal.spec.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/History.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -490,16 +490,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/History.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0">
+        <state line="2" column="67" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/History.md">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="67" selection-start="102" selection-end="102" vertical-scroll-proportion="0.03878788">
+        <state line="2" column="19" selection-start="48" selection-end="48" vertical-scroll-proportion="0.03878788">
           <folding />
         </state>
       </provider>
