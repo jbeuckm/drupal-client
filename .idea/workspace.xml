@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drupal.js" afterPath="$PROJECT_DIR$/lib/drupal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" afterPath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/drupal.spec.js" afterPath="$PROJECT_DIR$/test/drupal.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/History.md" afterPath="$PROJECT_DIR$/History.md" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +37,7 @@
       <file leaf-file-name="History.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/History.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="267" selection-end="267" vertical-scroll-proportion="0.31030303">
+            <state line="2" column="67" selection-start="102" selection-end="102" vertical-scroll-proportion="0.03878788">
               <folding />
             </state>
           </provider>
@@ -504,7 +499,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/History.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="267" selection-end="267" vertical-scroll-proportion="0.31030303">
+        <state line="2" column="67" selection-start="102" selection-end="102" vertical-scroll-proportion="0.03878788">
           <folding />
         </state>
       </provider>

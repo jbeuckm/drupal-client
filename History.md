@@ -1,6 +1,6 @@
 0.0.8 / 04-2014
 ==================
-* supports Services 3.7
+* supports Services 3.7 with patch: https://drupal.org/node/2198005
 
 0.0.7 / 04-2014
 ==================
