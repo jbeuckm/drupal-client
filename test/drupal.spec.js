@@ -311,6 +311,42 @@ describe("Drupal", function () {
       }, "timeout logging out", timeout);
 
     });
+  });
+
+  describe("can use a proxy", function () {
+
+      it("uses a proxy", function () {
+
+          var connected = false;
+          var done = false;
+
+          drupal.setProxy("web-proxyapp.us.bank-dns.com", 3128);
+
+          runs(function () {
+
+              drupal.systemConnect(
+                  function (responseData) {
+                      uid = responseData.user.uid;
+                      console.log("system/connect reported uid " + uid);
+                      connected = true;
+                      done = true;
+                  },
+                  function (err) {
+                      connected = false;
+                      done = true;
+                  }
+              );
+          });
+
+          waitsFor(function () {
+              return done;
+          }, 'timeout connecting', timeout);
+
+          runs(function () {
+              expect(connected).toEqual(true);
+          });
+      });
+
 
   });
 
