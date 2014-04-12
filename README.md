@@ -112,6 +112,9 @@ drupal.uploadFile(base64data, filename, filesize,
   },
   function (err) {
     console.log(err);
+  },
+  function (progress_event) {
+    console.log(progress_event.loaded + '/' + filesize + ' uploaded');
   }
 );
 ```
