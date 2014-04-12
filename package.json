@@ -1,6 +1,6 @@
 {
   "name": "drupal-client",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Javascript Drupal Services Client",
   "main": "./lib/drupal",
   "repository": {

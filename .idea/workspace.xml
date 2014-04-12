@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="70" selection-start="2482" selection-end="2482" vertical-scroll-proportion="0.60601914">
+            <state line="140" column="18" selection-start="3081" selection-end="3081" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="19" selection-start="48" selection-end="48" vertical-scroll-proportion="0.043010753">
               <folding />
             </state>
           </provider>
@@ -87,10 +96,10 @@
         <option value="$PROJECT_DIR$/lib/drupal_field_structure.js" />
         <option value="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
         <option value="$PROJECT_DIR$/lib/drupal.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/lib/httpClient.js" />
         <option value="$PROJECT_DIR$/test/drupal.spec.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -209,8 +218,8 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -277,6 +286,13 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method>
         <option name="FtpUpload" enabled="false">
@@ -285,13 +301,6 @@
         </option>
         <option name="PhingTarget" enabled="false" />
       </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method />
     </configuration>
     <list size="0" />
   </component>
@@ -331,7 +340,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17550506" sideWeight="0.6701878" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1780303" sideWeight="0.6701878" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -451,49 +460,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="24" selection-start="124" selection-end="124" vertical-scroll-proportion="0.17802504">
-          <folding />
-        </state>
+        <state line="8" column="24" selection-start="124" selection-end="124" vertical-scroll-proportion="0.17802504" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/xmlhttprequest/lib/XMLHttpRequest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="433" column="37" selection-start="11332" selection-end="11337" vertical-scroll-proportion="0.33286908">
+        <state line="433" column="37" selection-start="11332" selection-end="11337" vertical-scroll-proportion="0.33286908" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="230" column="24" selection-start="4960" selection-end="4960" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/drupal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="210" column="18" selection-start="4960" selection-end="4972" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/httpClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="18" selection-start="3081" selection-end="3081" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="30" selection-start="646" selection-end="646" vertical-scroll-proportion="0.60215056">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/drupal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="18" selection-start="4960" selection-end="4972" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="24" selection-start="4960" selection-end="4960" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/httpClient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="70" selection-start="2482" selection-end="2482" vertical-scroll-proportion="0.60601914">
+        <state line="2" column="19" selection-start="48" selection-end="48" vertical-scroll-proportion="0.043010753">
           <folding />
         </state>
       </provider>
