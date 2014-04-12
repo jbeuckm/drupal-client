@@ -197,6 +197,7 @@ describe("Drupal", function () {
 
       var success = false;
       var done = false;
+      var progress = false;
 
       var filename = "image.png";
       var data = require('fs').readFileSync("./test/"+filename);
@@ -215,6 +216,10 @@ describe("Drupal", function () {
             console.log(err);
             success = false;
             done = true;
+          },
+          function(event) {
+            expect(event.loaded).toBeGreaterThan(0);
+            progress = true;
           }
         );
       });
@@ -225,6 +230,7 @@ describe("Drupal", function () {
 
       runs(function () {
         expect(success).toEqual(true);
+        expect(progress).toEqual(true);
       });
 
     });
