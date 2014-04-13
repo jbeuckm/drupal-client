@@ -12,7 +12,13 @@ A Javascript client for Drupal 7 / Services Module
 
 ## Installation
 
+#### node.js ####
+
 `npm install drupal-client`
+
+#### Titanium/Alloy ####
+
+Copy lib/drupal.js and lib/field.js into your app/lib/ folder.
 
 ## Usage
 
