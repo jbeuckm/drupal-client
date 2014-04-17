@@ -257,7 +257,7 @@ describe("Drupal", function () {
         field_multiple: field.structureField(["one", "two", "three"]),
         field_file: field.structureField(fid, "fid"),
 
-        field_date: field.structureField(testDate)
+//        field_date: field.structureField(testDate)
 //        field_iso_date: field.structureField(testDate)
 
       };
