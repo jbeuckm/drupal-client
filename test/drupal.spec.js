@@ -244,7 +244,7 @@ describe("Drupal", function () {
       var testDate = new Date();
       testDate.setYear(1977);
       testDate.setMonth(5);
-      testDate.setDate(27);
+      testDate.setDate(28);
 
       var node = {
         type: "complex_content",
@@ -255,9 +255,9 @@ describe("Drupal", function () {
         field_float: field.structureField(2.3),
         field_integer: field.structureField(4),
         field_multiple: field.structureField(["one", "two", "three"]),
-        field_file: field.structureField(fid, "fid")
+        field_file: field.structureField(fid, "fid"),
 
-//        field_date: field.structureField(testDate),
+        field_date: field.structureField(testDate)
 //        field_iso_date: field.structureField(testDate)
 
       };
