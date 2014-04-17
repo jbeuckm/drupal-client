@@ -137,7 +137,8 @@ var node = {
   field_float: drupal.field.structureField(2.3),
   field_integer: drupal.field.structureField(4),
   field_multiple: drupal.field.structureField(["one", "two", "three"]),
-  field_file: drupal.field.structureField(fid, "fid")
+  field_file: drupal.field.structureField(fid, "fid"),
+  field_date: field.structureField(new Date())
 };
 
 drupal.createNode(node,

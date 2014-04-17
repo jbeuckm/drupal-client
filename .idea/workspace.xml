@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/field.js" afterPath="$PROJECT_DIR$/lib/field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/drupal.spec.js" afterPath="$PROJECT_DIR$/test/drupal.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="drupal.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,16 +37,25 @@
       <file leaf-file-name="drupal.spec.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="242" column="0" selection-start="5172" selection-end="5172" vertical-scroll-proportion="0.0">
+            <state line="260" column="0" selection-start="5754" selection-end="5805" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="field.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="140" column="0" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.54434997">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="field.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/field.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.5550239">
+            <state line="29" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,9 +87,9 @@
         <option value="$PROJECT_DIR$/lib/drupal.js" />
         <option value="$PROJECT_DIR$/lib/httpClient.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/field.js" />
         <option value="$PROJECT_DIR$/test/drupal.spec.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -456,11 +463,6 @@
         <state line="25" column="0" selection-start="507" selection-end="507" vertical-scroll-proportion="0.53763443" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="5" selection-start="495" selection-end="495" vertical-scroll-proportion="0.01944107" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/drupal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="210" column="18" selection-start="4960" selection-end="4972" vertical-scroll-proportion="0.0">
@@ -468,16 +470,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
+    <entry file="file://$PROJECT_DIR$/lib/field.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="0" selection-start="5172" selection-end="5172" vertical-scroll-proportion="0.0">
+        <state line="29" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/field.js">
+    <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.5550239">
+        <state line="260" column="0" selection-start="5754" selection-end="5805" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="0" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.54434997">
           <folding />
         </state>
       </provider>
