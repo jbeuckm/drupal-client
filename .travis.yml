@@ -32,7 +32,7 @@ before_script:
   - drush en rest_server --yes
 
   # enable a services endpoint with the basics in place for testing
-  - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git#4438c10e4b9f32f48cf837daa1afad1f4339d441 sites/all/modules/services_test_endpoint#
+  - git clone "http://git.drupal.org/sandbox/jbeuckm/2217233.git#4438c10e4b9f32f48cf837daa1afad1f4339d441" sites/all/modules/services_test_endpoint
   - drush en services_test_endpoint --yes
 
   - drush cc all --yes
