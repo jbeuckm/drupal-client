@@ -128,7 +128,7 @@ describe("Drupal", function () {
     });
 
 
-    it("can reset password", function () {
+    xit("can reset password", function () {
 
       var success = false;
       var done = false;
@@ -287,8 +287,8 @@ describe("Drupal", function () {
         field_integer: field.structureField(4),
         field_multiple: field.structureField(["one", "two", "three"]),
         field_file: field.structureField(fid, "fid"),
-
 //        field_date: field.structureField(testDate)
+
 //        field_iso_date: field.structureField(testDate)
 
       };
