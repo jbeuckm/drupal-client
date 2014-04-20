@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/drupal.js" afterPath="$PROJECT_DIR$/lib/drupal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/drupal.spec.js" afterPath="$PROJECT_DIR$/test/drupal.spec.js" />
     </list>
     <ignored path="drupal.js.iws" />
@@ -29,7 +30,7 @@
       <file leaf-file-name="drupal.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/drupal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="18" selection-start="4960" selection-end="4972" vertical-scroll-proportion="0.0">
+            <state line="318" column="6" selection-start="7705" selection-end="7705" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -38,7 +39,7 @@
       <file leaf-file-name="drupal.spec.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="259" column="2" selection-start="5756" selection-end="5756" vertical-scroll-proportion="0.13397129">
+            <state line="148" column="10" selection-start="3212" selection-end="3212" vertical-scroll-proportion="0.67464113">
               <folding />
             </state>
           </provider>
@@ -85,11 +86,11 @@
         <option value="$PROJECT_DIR$/lib/drupal_fields.js" />
         <option value="$PROJECT_DIR$/lib/drupal_field_structure.js" />
         <option value="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
-        <option value="$PROJECT_DIR$/lib/drupal.js" />
         <option value="$PROJECT_DIR$/lib/httpClient.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/lib/field.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/lib/drupal.js" />
         <option value="$PROJECT_DIR$/test/drupal.spec.js" />
       </list>
     </option>
@@ -331,7 +332,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19195402" sideWeight="0.6701878" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19655173" sideWeight="0.6701878" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -464,16 +465,9 @@
         <state line="25" column="0" selection-start="507" selection-end="507" vertical-scroll-proportion="0.53763443" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/drupal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="18" selection-start="4960" selection-end="4972" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="0" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="140" column="0" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/field.js">
@@ -481,9 +475,16 @@
         <state line="29" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/drupal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="318" column="6" selection-start="7705" selection-end="7705" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="2" selection-start="5756" selection-end="5756" vertical-scroll-proportion="0.13397129">
+        <state line="148" column="10" selection-start="3212" selection-end="3212" vertical-scroll-proportion="0.67464113">
           <folding />
         </state>
       </provider>

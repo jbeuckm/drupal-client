@@ -128,6 +128,37 @@ describe("Drupal", function () {
     });
 
 
+    it("can reset password", function () {
+
+      var success = false;
+      var done = false;
+
+      // login as the previously created test user
+      runs(function () {
+        drupal.resetPassword(uid,
+          function (data) {
+            console.log('spec password_reset succeeded with ' + data);
+            success = true;
+            done = true;
+          },
+          function (err) {
+            console.log(err);
+            success = false;
+            done = true;
+          }
+        );
+      });
+
+      waitsFor(function () {
+        return done;
+      }, 'timeout resetting password in', timeout);
+
+      runs(function () {
+        expect(success).toEqual(true);
+      });
+    });
+
+
     it("can load user entity", function () {
 
       var done = false;
