@@ -34,7 +34,7 @@ before_script:
   # enable a services endpoint with the basics in place for testing
   - git clone http://git.drupal.org/sandbox/jbeuckm/2217233.git sites/all/modules/services_test_endpoint
   - cd sites/all/modules/services_test_endpoint
-  - git checkout -b working 473e87995c7e4598ebe4be35dad10cba13f3d5db
+  - git checkout -b working 4438c10e4b9f32f48cf837daa1afad1f4339d441
   - cd ../../../..
   - drush en services_test_endpoint --yes
 
