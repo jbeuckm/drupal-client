@@ -128,7 +128,7 @@ describe("Drupal", function () {
     });
 
 
-    it("can reset password", function () {
+    xit("can reset password", function () {
 
       var success = false;
       var done = false;

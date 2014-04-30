@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911ec77b-7121-4561-81ab-ddbd501527d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" afterPath="$PROJECT_DIR$/profiles/drupal-js/drupal-js.profile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/drupal.spec.js" afterPath="$PROJECT_DIR$/test/drupal.spec.js" />
     </list>
     <ignored path="drupal.js.iws" />
@@ -38,7 +37,7 @@
       <file leaf-file-name="drupal.spec.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="4" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.019138755">
+            <state line="130" column="5" selection-start="2713" selection-end="2713" vertical-scroll-proportion="0.019138755">
               <folding />
             </state>
           </provider>
@@ -503,7 +502,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/drupal.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="4" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.019138755">
+        <state line="130" column="5" selection-start="2713" selection-end="2713" vertical-scroll-proportion="0.019138755">
           <folding />
         </state>
       </provider>
