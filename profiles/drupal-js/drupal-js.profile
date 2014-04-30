@@ -7,6 +7,6 @@ projects[] = views
 projects[] = ctools
 projects[] = entity
 projects[] = eck
+projects[services] = 3.5
 projects[] = services_entity
-projects[services] = 3.7
 
