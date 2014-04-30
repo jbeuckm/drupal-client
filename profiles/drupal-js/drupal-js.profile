@@ -6,5 +6,7 @@ projects[] = drupal
 projects[] = views
 projects[] = ctools
 projects[] = entity
-projects[services] = 3.5
+projects[] = eck
+projects[] = services_entity
+projects[services] = 3.7
 
