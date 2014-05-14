@@ -8,7 +8,7 @@ A Javascript client for Drupal 7 / Services Module
 
 1. An installation of Drupal 7.x and <a href="https://drupal.org/project/services">Services Module</a>
 
-2. REST Server module enabled, an endpoint defined and appropriate permissions (system, user, node, etc.). In server settings, enable the request parsing mime types application/json, application/x-www-form-urlencoded and multipart/form-data.
+2. REST Server module enabled, an endpoint defined and appropriate permissions (system, user, node, etc.). In server settings, enable only response formatter `json` the request parsing mime types `application/json`, `application/x-www-form-urlencoded` and `multipart/form-data`.
 
 3. A Javascript project - node.js or Titanium are known to work
 
