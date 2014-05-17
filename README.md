@@ -10,7 +10,7 @@ A Javascript client for Drupal 7 / Services Module
 
 2. REST Server module enabled, an endpoint defined and appropriate permissions (system, user, node, etc.). In server settings, enable only response formatter `json` the request parsing mime types `application/json`, `application/x-www-form-urlencoded` and `multipart/form-data`.
 
-3. A Javascript project - node.js or Titanium are known to work
+3. A Javascript project - node.js or Titanium are known to work.
 
 ## Installation
 
@@ -155,7 +155,7 @@ drupal.createNode(node,
 
 ### Make Requests
 
-The workhorse function of the interface is `makeAuthenticatedRequest(config, success, failure, headers)`. There are a few helper functions included for posting/getting nodes, getting views, uploading files, etc. But they typically all construct a call to `makeAuthenticatedRequest`. This function should facilitate most things that people want to do with Drupal in a mobile environment. It's also easy to use `makeAuthenticatedRequest' to make requests agaist custom Services.
+The workhorse function of the interface is `makeAuthenticatedRequest(config, success, failure, headers)`. There are a few helper functions included for posting/getting nodes, getting views, uploading files, etc. They all construct a call to `makeAuthenticatedRequest()`. This function should facilitate most things that people want to do with Drupal in a mobile environment. It's also easy to use `makeAuthenticatedRequest' to make requests against custom Services. The short-term roadmap includes calls to the services supporting entities.
 
 ### Tests
 
