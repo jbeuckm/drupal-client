@@ -16,6 +16,7 @@ describe("Drupal", function () {
     return;
   }
 
+    drupal.setSettingsPrefix("test");
 
   describe("can create account & login", function () {
 
