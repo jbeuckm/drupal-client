@@ -24,7 +24,7 @@ Copy lib/drupal.js and lib/field.js into your app/lib/ folder.
 
 ## Usage
 
-Configure the client for your installation of Drupal+Services
+Configure the client for your installation of Drupal+Services. <i>Note that the URL includes the trailing slash.</i>
 
 ```javascript
 var drupal = require('drupal');
