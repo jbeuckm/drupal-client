@@ -160,3 +160,5 @@ The workhorse function of the interface is `makeAuthenticatedRequest(config, suc
 ### Tests
 
 To run the tests, rename `test/config.js.example` to `test/config.js` and replace strings with the url of your Drupal install and your service endpoint.
+
+`npm test`
