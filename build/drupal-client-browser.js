@@ -60,24 +60,31 @@ if (typeof Ti !== 'undefined') {
     createHTTPClient = function() {
 
         var xhr = new XMLHttpRequest();
-        if ("withCredentials" in xhr) {
-
-            xhr.withCredentials = true;
-
-        } else if (typeof XDomainRequest != "undefined") {
-
-            xhr = new XDomainRequest();
-
-        } else {
-
-            // Otherwise, CORS is not supported by the browser.
-            throw new Error('CORS not supported');
-            xhr = null;
-
-        }
         return xhr;
 
     }
+}
+
+function setupCredentials(xhr) {
+    if (environment != BROWSER) {
+        return xhr;
+    }
+    if ("withCredentials" in xhr) {
+
+        xhr.withCredentials = true;
+
+    } else if (typeof XDomainRequest != "undefined") {
+
+        xhr = new XDomainRequest();
+
+    } else {
+
+        // Otherwise, CORS is not supported by the browser.
+        throw new Error('CORS not supported');
+        xhr = null;
+
+    }
+    return xhr;
 }
 
 
@@ -119,6 +126,7 @@ function getCsrfToken(success, failure) {
 
     var tokenPath = SITE_ROOT + 'services/session/token';
     xhr.open("GET", tokenPath);
+    xhr = setupCredentials(xhr);
 
     var cookie = Settings.getString(settingsPrefix + "Drupal-Cookie");
     if (environment != BROWSER) {
@@ -139,6 +147,7 @@ function systemConnect(success, failure) {
 
     console.log("POSTing to url " + url);
     xhr.open("POST", url);
+    xhr = setupCredentials(xhr);
     xhr.setRequestHeader("Accept", "application/json");
 
     // if session exists, token will be required
@@ -224,6 +233,7 @@ function makeRequest(config, success, failure, headers) {
     }
 
     xhr.open(config.httpMethod, url);
+    xhr = setupCredentials(xhr);
 
     xhr.onerror = function (e) {
         console.log(JSON.stringify(e));
