@@ -1,72 +1,83 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /**
- * Yet another Drupal adapter for Javascript
+ * Drupal Adapter for Javascript
  * This module is adapted to the CSRF token requirement in Services 3.4.
+ * Tested to work with properly configured Services 3.5. Will work with 3.8+ when released.
  */
 "use strict";
 
-var Settings, createHTTPClient;
-
-var environment;
 var TITANIUM = 1;
 var NODE = 2;
 var BROWSER = 3;
 
+function Drupal() {
+
+    this.environment = null;
+    this.Settings = null;
+    this.createHTTPClient = null;
+
 // allow multiple instances of this module to use settings without conflict
-var settingsPrefix = '';
+    this.settingsPrefix = '';
 
 // running in Titanium
-if (typeof Ti !== 'undefined') {
-    environment = TITANIUM;
-    Settings = Ti.App.Properties;
-    createHTTPClient = Ti.Network.createHTTPClient;
-} else if (typeof window == 'undefined') {
+    if (typeof Ti !== 'undefined') {
+        this.environment = TITANIUM;
+        this.Settings = Ti.App.Properties;
+        this.createHTTPClient = Ti.Network.createHTTPClient;
+    } else if (typeof window == 'undefined') {
 // running in node.js
-    environment = NODE;
-    var npSettings = require("node-persist");
-    Settings = {
-        setString: function (name, value) {
-            npSettings.setItem(name, value);
-        },
-        getString: function (name, defaultValue) {
-            var item = npSettings.getItem(name);
-            if (item === undefined) {
-                return defaultValue;
+        this.environment = NODE;
+        var npSettings = require("node-persist");
+        this.Settings = {
+            setString:function (name, value) {
+                npSettings.setItem(name, value);
+            },
+            getString:function (name, defaultValue) {
+                var item = npSettings.getItem(name);
+                if (item === undefined) {
+                    return defaultValue;
+                }
+
+                return item;
+
             }
+        };
+        npSettings.initSync();
 
-            return item;
-
-        }
-    };
-    npSettings.initSync();
-
-    createHTTPClient = require("./httpClient.js").createHTTPClient;
-} else {
+        this.createHTTPClient = require("./httpClient.js").createHTTPClient;
+    } else {
 // running in the browser
-    environment = BROWSER;
-    Settings = {
-        setString: function (name, value) {
-            localStorage.setItem(name, value);
-        },
-        getString: function (name, defaultValue) {
-            var item = localStorage.getItem(name);
-            if (item === undefined) {
-                return defaultValue;
+        this.environment = BROWSER;
+        this.Settings = {
+            setString:function (name, value) {
+                localStorage.setItem(name, value);
+            },
+            getString:function (name, defaultValue) {
+                var item = localStorage.getItem(name);
+                if (item === undefined) {
+                    return defaultValue;
+                }
+                return item;
             }
-            return item;
+        };
+
+        this.createHTTPClient = function () {
+
+            var xhr = new XMLHttpRequest();
+            return xhr;
+
         }
-    };
-
-    createHTTPClient = function() {
-
-        var xhr = new XMLHttpRequest();
-        return xhr;
-
     }
+
+
+    this.REST_PATH = null;
+    this.SITE_ROOT = null;
+    this.SERVICES_ENDPOINT = null;
+
 }
 
-function setupCredentials(xhr) {
-    if (environment != BROWSER) {
+Drupal.prototype.setupCredentials = function (xhr) {
+    if (this.environment != BROWSER) {
         return xhr;
     }
     if ("withCredentials" in xhr) {
@@ -85,37 +96,36 @@ function setupCredentials(xhr) {
 
     }
     return xhr;
-}
+};
 
-
-var REST_PATH, SITE_ROOT, SERVICES_ENDPOINT;
 
 /**
  * Prepare to connect to a (different) Drupal server and Services 3.4 module.
  */
-function setRestPath(root, endpoint) {
-    SITE_ROOT = root;
-    SERVICES_ENDPOINT = endpoint;
-    REST_PATH = root + endpoint + '/';
-}
-
+Drupal.prototype.setRestPath = function (root, endpoint) {
+    this.SITE_ROOT = root;
+    this.SERVICES_ENDPOINT = endpoint;
+    this.REST_PATH = root + endpoint + '/';
+};
 
 
 /**
  * Retrieve the new Services security token identifying this session with this device.
  */
-function getCsrfToken(success, failure) {
+Drupal.prototype.getCsrfToken = function (success, failure) {
 
-    var existingToken = Settings.getString(settingsPrefix + "X-CSRF-Token");
+    var existingToken = this.Settings.getString(this.settingsPrefix + "X-CSRF-Token");
     if (existingToken) {
         success(existingToken);
         return;
     }
 
-    var xhr = createHTTPClient();
+    var xhr = this.createHTTPClient();
+
+    var self = this;
 
     xhr.onload = function () {
-        Settings.setString(settingsPrefix + "X-CSRF-Token", xhr.responseText);
+        self.Settings.setString(self.settingsPrefix + "X-CSRF-Token", xhr.responseText);
         console.log('got new CSRF token ' + xhr.responseText);
         success(xhr.responseText);
     };
@@ -124,39 +134,39 @@ function getCsrfToken(success, failure) {
         failure(err);
     };
 
-    var tokenPath = SITE_ROOT + 'services/session/token';
+    var tokenPath = this.SITE_ROOT + 'services/session/token';
     xhr.open("GET", tokenPath);
-    xhr = setupCredentials(xhr);
+    xhr = this.setupCredentials(xhr);
 
-    var cookie = Settings.getString(settingsPrefix + "Drupal-Cookie");
-    if (environment != BROWSER) {
+    var cookie = this.Settings.getString(this.settingsPrefix + "Drupal-Cookie");
+    if (this.environment != BROWSER) {
         xhr.setRequestHeader("Cookie", cookie);
     }
 
     xhr.send();
-}
+};
 
 
 /**
  * Establish a session (or return the stored session).
  */
-function systemConnect(success, failure) {
+Drupal.prototype.systemConnect = function (success, failure) {
 
-    var xhr = createHTTPClient(),
-        url = REST_PATH + 'system/connect';
+    var xhr = this.createHTTPClient(),
+        url = this.REST_PATH + 'system/connect';
 
     console.log("POSTing to url " + url);
     xhr.open("POST", url);
-    xhr = setupCredentials(xhr);
+    xhr = this.setupCredentials(xhr);
     xhr.setRequestHeader("Accept", "application/json");
 
     // if session exists, token will be required
-    var token = Settings.getString(settingsPrefix + "X-CSRF-Token");
+    var token = this.Settings.getString(this.settingsPrefix + "X-CSRF-Token");
     if (token) {
         xhr.setRequestHeader("X-CSRF-Token", token);
     }
 
-
+    var self = this;
     xhr.onload = function () {
 
         if (xhr.status === 200) {
@@ -164,9 +174,9 @@ function systemConnect(success, failure) {
             var responseData = JSON.parse(response);
 
             var cookie = responseData.session_name + '=' + responseData.sessid;
-            Settings.setString(settingsPrefix + "Drupal-Cookie", cookie);
+            self.Settings.setString(self.settingsPrefix + "Drupal-Cookie", cookie);
 
-            getCsrfToken(
+            this.getCsrfToken(
                 function () {
                     success(responseData);
                 },
@@ -186,17 +196,17 @@ function systemConnect(success, failure) {
         console.log(e);
 
         // since systemConnect failed, will need a new csrf and session
-        Settings.setString(settingsPrefix + "X-CSRF-Token", null);
-        Settings.setString(settingsPrefix + "Drupal-Cookie", null);
+        self.Settings.setString(self.settingsPrefix + "X-CSRF-Token", null);
+        self.Settings.setString(self.settingsPrefix + "Drupal-Cookie", null);
 
         failure(e);
     };
 
-    if (environment === TITANIUM) {
-        xhr.clearCookies(SITE_ROOT);
+    if (this.environment === TITANIUM) {
+        xhr.clearCookies(this.SITE_ROOT);
     }
     xhr.send();
-}
+};
 
 
 /**
@@ -219,11 +229,11 @@ function systemConnect(success, failure) {
  *
  *     trace (boolean): If true, echo the request summary with console.log()
  */
-function makeRequest(config, success, failure, headers) {
+Drupal.prototype.makeRequest = function (config, success, failure, headers) {
 
     var trace = "makeRequest()\n",
-        url = REST_PATH + config.servicePath,
-        xhr = createHTTPClient();
+        url = this.REST_PATH + config.servicePath,
+        xhr = this.createHTTPClient();
 
     trace += config.httpMethod + ' ' + url + "\n";
 
@@ -233,7 +243,7 @@ function makeRequest(config, success, failure, headers) {
     }
 
     xhr.open(config.httpMethod, url);
-    xhr = setupCredentials(xhr);
+    xhr = this.setupCredentials(xhr);
 
     xhr.onerror = function (e) {
         console.log(JSON.stringify(e));
@@ -285,38 +295,38 @@ function makeRequest(config, success, failure, headers) {
     }
 
     xhr.send(config.params);
-}
+};
 
 
 /**
  * Make request with the auth headers
  */
-function makeAuthenticatedRequest(config, success, failure, _headers) {
+Drupal.prototype.makeAuthenticatedRequest = function (config, success, failure, _headers) {
 
     var headers = _headers || {};
 
-    if (!config.skipCookie && (environment != BROWSER)) {
-        var cookie = Settings.getString(settingsPrefix + "Drupal-Cookie");
+    if (!config.skipCookie && (this.environment != BROWSER)) {
+        var cookie = this.Settings.getString(this.settingsPrefix + "Drupal-Cookie");
         headers["Cookie"] = cookie;
     }
 
     if (!config.skipCsrfToken) {
-        var token = Settings.getString(settingsPrefix + "X-CSRF-Token");
+        var token = this.Settings.getString(this.settingsPrefix + "X-CSRF-Token");
         headers["X-CSRF-Token"] = token;
     }
 
-    makeRequest(config, success, failure, headers);
-}
+    this.makeRequest(config, success, failure, headers);
+};
 
 
 /**
  * Attempt to register a new account. user object must include name, pass, mail properties.
  */
-function createAccount(user, success, failure, headers) {
+Drupal.prototype.createAccount = function (user, success, failure, headers) {
 
-    console.log('Registering new user: ' + JSON.stringify(user) + " with cookie " + Settings.getString(settingsPrefix + "Drupal-Cookie"));
+    console.log('Registering new user: ' + JSON.stringify(user) + " with cookie " + this.Settings.getString(this.settingsPrefix + "Drupal-Cookie"));
 
-    makeAuthenticatedRequest({
+    this.makeAuthenticatedRequest({
             httpMethod:'POST',
             servicePath:'user/register.json',
             contentType:'application/json',
@@ -334,20 +344,20 @@ function createAccount(user, success, failure, headers) {
         },
         headers
     );
-}
+};
 
 
 /**
  * Construct and send the proper login request.
  */
-function login(username, password, success, failure, headers) {
+Drupal.prototype.login = function (username, password, success, failure, headers) {
 
     var user = {
         username:username,
         password:password
     };
 
-    makeAuthenticatedRequest({
+    this.makeAuthenticatedRequest({
             httpMethod:'POST',
             servicePath:'user/login.json',
             contentType:"application/json",
@@ -356,26 +366,26 @@ function login(username, password, success, failure, headers) {
         function (responseData) {
 
             var cookie = responseData.session_name + '=' + responseData.sessid;
-            Settings.setString(settingsPrefix + "Drupal-Cookie", cookie);
+            this.Settings.setString(this.settingsPrefix + "Drupal-Cookie", cookie);
             console.log('login saving new cookie ' + cookie);
 
             // store new token for this session
-            Settings.setString(settingsPrefix + "X-CSRF-Token", responseData.token);
+            this.Settings.setString(this.settingsPrefix + "X-CSRF-Token", responseData.token);
             console.log('login saving new token ' + responseData.token);
 
             success(responseData.user);
 
         },
         failure, headers);
-}
+};
 
 
 /**
  * Reset a user's password.
  */
-function resetPassword(uid, success, failure, headers) {
+Drupal.prototype.resetPassword = function (uid, success, failure, headers) {
 
-    makeAuthenticatedRequest({
+    this.makeAuthenticatedRequest({
             httpMethod:'POST',
             servicePath:'user/' + uid + '/password_reset.json',
             contentType:"application/json"
@@ -386,76 +396,76 @@ function resetPassword(uid, success, failure, headers) {
         },
         failure, headers
     );
-}
+};
 
 
 /**
  * Become user:uid=0
  */
-function logout(success, failure, headers) {
+Drupal.prototype.logout = function (success, failure, headers) {
 
-    makeAuthenticatedRequest({
+    this.makeAuthenticatedRequest({
         httpMethod:'POST',
         servicePath:'user/logout.json'
     }, function (response) {
         // session over - delete the token
-        Settings.setString(settingsPrefix + "X-CSRF-Token", null);
+        this.Settings.setString(this.settingsPrefix + "X-CSRF-Token", null);
         success(response);
     }, failure, headers);
 
-}
+};
 
 
 /**
  * Requires Services Views module
  */
-function getView(viewName, args, success, failure, headers) {
-    makeAuthenticatedRequest({
-        servicePath:"views/" + viewName + ".json?" + encodeUrlString(args),
+Drupal.prototype.getView = function (viewName, args, success, failure, headers) {
+    this.makeAuthenticatedRequest({
+        servicePath:"views/" + viewName + ".json?" + this.encodeUrlString(args),
         httpMethod:'GET',
         contentType:"application/json"
     }, success, failure, headers);
-}
+};
 
 /**
  * Convenience function for GET requests
  */
-function getResource(resourceName, args, success, failure, headers) {
-    makeAuthenticatedRequest({
-        servicePath:resourceName + ".json?" + encodeUrlString(args),
+Drupal.prototype.getResource = function (resourceName, args, success, failure, headers) {
+    this.makeAuthenticatedRequest({
+        servicePath:resourceName + ".json?" + this.encodeUrlString(args),
         httpMethod:'GET'
     }, success, failure, headers);
-}
+};
 
 /**
  * Convenience function for POST requests
  */
-function postResource(resourceName, object, success, failure, headers) {
-    makeAuthenticatedRequest({
+Drupal.prototype.postResource = function (resourceName, object, success, failure, headers) {
+    this.makeAuthenticatedRequest({
         servicePath:resourceName + ".json",
         httpMethod:'POST',
         params:JSON.stringify(object)
     }, success, failure, headers);
-}
+};
 
 /**
  * Convenience function for PUT requests
  */
-function putResource(resourceName, object, success, failure, headers) {
-    makeAuthenticatedRequest({
-        servicePath: resourceName + ".json",
-        httpMethod: 'PUT',
-        contentType: 'application/json',
-        params: JSON.stringify(object)
+Drupal.prototype.putResource = function (resourceName, object, success, failure, headers) {
+    this.makeAuthenticatedRequest({
+        servicePath:resourceName + ".json",
+        httpMethod:'PUT',
+        contentType:'application/json',
+        params:JSON.stringify(object)
     }, success, failure, headers);
-}
+};
 
 /**
  * The fundamental act of Drupal
  */
-function createNode(node, success, failure) {
+Drupal.prototype.createNode = function (node, success, failure) {
 
-    makeAuthenticatedRequest({
+    this.makeAuthenticatedRequest({
             servicePath:"node",
             httpMethod:"POST",
             contentType:'application/json',
@@ -470,66 +480,48 @@ function createNode(node, success, failure) {
             failure(response);
         }
     );
-}
+};
 
 /**
  * Haven't tested this in a while but it was working in Services 3.2...
  */
-function uploadFile(base64data, filename, filesize, success, failure, progress, headers) {
+Drupal.prototype.uploadFile = function (base64data, filename, filesize, success, failure, progress, headers) {
 
     var fileDescription = {
-        file: base64data,
-        filename: filename,
-        filesize: "" + filesize
+        file:base64data,
+        filename:filename,
+        filesize:"" + filesize
     };
 
-    makeAuthenticatedRequest({
-        servicePath: "file.json",
-        httpMethod: "POST",
-        contentType: "application/x-www-form-urlencoded; charset=utf-8",
-        params: fileDescription,
-        progress: progress
+    this.makeAuthenticatedRequest({
+        servicePath:"file.json",
+        httpMethod:"POST",
+        contentType:"application/x-www-form-urlencoded; charset=utf-8",
+        params:fileDescription,
+        progress:progress
     }, success, failure, headers);
-}
+};
 
 
 /**
  * Create a request string from an object of request parameters.
  */
-function encodeUrlString(args) {
+Drupal.prototype.encodeUrlString = function (args) {
     var parts = [];
     for (var i in args) {
         var arg = args[i];
         parts.push(i + '=' + encodeURIComponent(arg));
     }
     return parts.join('&');
-}
+};
 
 
-exports.Settings = Settings;
-exports.setSettingsPrefix = function(p) { settingsPrefix = p; };
+Drupal.prototype.setSettingsPrefix = function (p) {
+    this.settingsPrefix = p;
+};
+Drupal.prototype.field = require("./field");
 
-exports.field = require("./field");
-
-exports.setRestPath = setRestPath;
-
-exports.systemConnect = systemConnect;
-exports.makeRequest = makeRequest;
-exports.makeAuthenticatedRequest = makeAuthenticatedRequest;
-exports.createAccount = createAccount;
-exports.login = login;
-exports.resetPassword = resetPassword;
-exports.logout = logout;
-
-exports.getResource = getResource;
-exports.postResource = postResource;
-exports.putResource = putResource;
-
-exports.createNode = createNode;
-exports.uploadFile = uploadFile;
-
-exports.getView = getView;
-
+module.exports = new Drupal();
 },{"./field":2,"./httpClient.js":3,"node-persist":39}],2:[function(require,module,exports){
 
 /**
