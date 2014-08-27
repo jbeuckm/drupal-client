@@ -27,7 +27,8 @@ Copy lib/drupal.js and lib/field.js into your app/lib/ folder.
 Configure the client for your installation of Drupal+Services. <i>Note that the URL includes the trailing slash.</i>
 
 ```javascript
-var drupal = require('drupal');
+var Drupal = require('drupal');
+var drupal = new Drupal();
 
 drupal.setRestPath("http://mywebsite.com/", "rest_endpoint");
 ```
