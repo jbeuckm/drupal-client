@@ -14,6 +14,12 @@ A Javascript client for Drupal 7 / Services Module
 
 ## Installation
 
+#### browser ####
+
+`bower install drupal-client`
+
+`<script src="bower_components/drupal-client/build/drupal.min.js"></script>`
+
 #### node.js ####
 
 `npm install drupal-client`
@@ -163,4 +169,5 @@ The workhorse function of the interface is `makeAuthenticatedRequest(config, suc
 To run the tests, rename `test/config.js.example` to `test/config.js` and replace strings with the url of your Drupal install and your service endpoint.
 
 `npm install`
+
 `npm test`
