@@ -24,7 +24,7 @@ A Javascript client for Drupal 7 / Services Module
 
 `npm install drupal-client`
 
-`var Drupal = require('drupal');'
+`var Drupal = require('drupal');`
 
 #### Titanium/Alloy ####
 
