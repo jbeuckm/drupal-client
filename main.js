@@ -1,2 +1,2 @@
-window.drupal = require('./lib/drupal');
+window.Drupal = require('./lib/drupal');
 

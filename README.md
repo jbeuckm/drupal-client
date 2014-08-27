@@ -24,16 +24,19 @@ A Javascript client for Drupal 7 / Services Module
 
 `npm install drupal-client`
 
+`var Drupal = require('drupal');'
+
 #### Titanium/Alloy ####
 
 Copy lib/drupal.js and lib/field.js into your app/lib/ folder.
+
+`var Drupal = require('drupal');`
 
 ## Usage
 
 Configure the client for your installation of Drupal+Services. <i>Note that the URL includes the trailing slash.</i>
 
 ```javascript
-var Drupal = require('drupal-client');
 var drupal = new Drupal();
 
 drupal.setRestPath("http://mywebsite.com/", "rest_endpoint");
