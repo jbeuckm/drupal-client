@@ -155,6 +155,25 @@ Drupal.prototype.getCsrfToken = function (success, failure) {
  */
 Drupal.prototype.systemConnect = function (success, failure) {
 
+    var self = this;
+
+    // if session exists, token will be required
+    var token = Settings.getString(this.settingsPrefix + "X-CSRF-Token");
+    if (!token) {
+        console.log("will request token before systemConnect");
+        self.getCsrfToken(
+            function () {
+                self.systemConnect(success, failure);
+            },
+            function (err) {
+                failure(err);
+            }
+        );
+        return;
+    } else {
+        console.log("will systemConnect with token "+token);
+    }
+
     var xhr = createHTTPClient(),
         url = this.REST_PATH + 'system/connect';
 
@@ -163,14 +182,11 @@ Drupal.prototype.systemConnect = function (success, failure) {
     xhr.open("POST", url);
     xhr = this.setupCredentials(xhr);
     xhr.setRequestHeader("Accept", "application/json");
+    
+    // required for Titanium Mobile, maybe others?
+	xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
 
-    // if session exists, token will be required
-    var token = Settings.getString(this.settingsPrefix + "X-CSRF-Token");
-    if (token) {
-        xhr.setRequestHeader("X-CSRF-Token", token);
-    }
-
-    var self = this;
+    xhr.setRequestHeader("X-CSRF-Token", token);
 
     xhr.onload = function () {
 
@@ -181,20 +197,24 @@ Drupal.prototype.systemConnect = function (success, failure) {
             var cookie = responseData.session_name + '=' + responseData.sessid;
             Settings.setString(self.settingsPrefix + "Drupal-Cookie", cookie);
 
-            self.getCsrfToken(
-                function () {
-                    success(responseData);
-                },
-                function (err) {
-                    failure(err);
-                }
-            );
+            success(responseData);
         } else {
             console.log("systemConnect error with " + xhr.status);
+            
+            if (xhr.status == 401) {
+                // token error - get a new one and try again
+                Settings.setString(self.settingsPrefix + "X-CSRF-Token", null);
+                setTimeout(function(){
+                    self.systemConnect(success, failure);
+                }, 0);
+                return;
+            }
+            
             console.log(xhr.getAllResponseHeaders());
             console.log(xhr.responseText);
             failure(xhr.responseText);
         }
+        
     };
     xhr.onerror = function (e) {
         console.log("There was an error calling systemConnect: ");
@@ -470,6 +490,16 @@ Drupal.prototype.putResource = function (resourceName, object, success, failure,
         httpMethod:'PUT',
         contentType:'application/json',
         params:JSON.stringify(object)
+    }, success, failure, headers);
+};
+
+/**
+ * Convenience function for DELETE requests
+ */
+Drupal.prototype.deleteResource = function (resourceName, rid, success, failure, headers) {
+    this.makeAuthenticatedRequest({
+        servicePath:resourceName + "/" + rid + ".json",
+        httpMethod:'DELETE'
     }, success, failure, headers);
 };
 
