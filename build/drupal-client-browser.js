@@ -113,6 +113,13 @@ Drupal.prototype.setRestPath = function (root, endpoint) {
 
 
 /**
+ * Helper for when 401 happens on stale token during development.
+ */
+Drupal.prototype.clearCsrfToken = function (success, failure) {
+    Settings.setString(this.settingsPrefix + "X-CSRF-Token", null);
+};
+
+/**
  * Retrieve the new Services security token identifying this session with this device.
  */
 Drupal.prototype.getCsrfToken = function (success, failure) {
